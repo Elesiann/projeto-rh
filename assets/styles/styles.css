@@ -4,7 +4,7 @@
   --green-ryb: #83b644ff;
   --orange-peel: #f59e1cff;
   --vermilion: #e6341cff;
-  --pewter-blue: rgb(118, 142, 148);
+  --pewter-blue: rgb(167, 209, 221);
   --blue-sapphire: #145f7fff;
   --white: #ffffffff;
   /* ========================================== font ============================= */
@@ -37,6 +37,11 @@ header img {
   width: 100px;
 }
 
+.panel {
+  background-color: var(--blue-sapphire);
+  color: white;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -46,6 +51,7 @@ header img {
 .nav-item {
   margin-right: 5rem;
   margin-left: 3rem;
+  font-size: 1.25rem;
 }
 
 .row {
@@ -70,13 +76,25 @@ header img {
 
 .wide-limit {
   width: 100vw;
-  height: 70vh;
+  height: 90vh;
+}
+
+.dados__principais {
+  margin-top: 2rem;
 }
 
 .carousel-item img {
   object-fit: cover;
   object-position: center;
   width: 100vw;
-  height: 70vh;
+  height: 90vh;
   overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    justify-content: space-around;
+  }
 }
