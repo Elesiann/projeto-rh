@@ -68,7 +68,7 @@
       </nav>
     </header>
 
-    <!--========================== BACKGROUND IMAGE ==========================-->
+    <!--========================== BACKGROUND CAROUSEL ==========================-->
     <div
       id="carouselExampleSlidesOnly"
       class="carousel slide wide-limit center"
@@ -107,6 +107,7 @@
         </div>
         <div class="panel-body">
           <form>
+            <!--==========================================-->
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
@@ -114,43 +115,109 @@
                   <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
-              <!-- Col -->
-
+              <!--==========================================-->
               <div class="col-sm-6">
                 <div class="form-group">
                   <label class="control-label">Sobrenome</label>
                   <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
-              <!-- Col -->
             </div>
-            <!-- Row -->
-
+            <!--==========================================-->
             <div class="row">
               <div class="col-sm-4">
                 <div class="form-group">
-                  <label class="control-label">Cidade</label>
-                  <input type="text" class="form-control" placeholder="" />
+                  <label class="control-label">Data de Nascimento</label>
+                  <input type="date" class="form-control" placeholder="" />
                 </div>
               </div>
-              <!-- Col -->
-
+              <!--==========================================-->
               <div class="col-sm-4">
                 <div class="form-group">
-                  <label class="control-label">Estado</label>
-                  <input type="text" class="form-control" placeholder="" />
+                  <label class="control-label">Estado civil</label>
+                  <select
+                    name="estado_civil"
+                    class="form-control"
+                    id="inputEstadoCivil"
+                  >
+                    <option value="Solteiro">Solteiro</option>
+                    <option value="Casado">Casado</option>
+                    <option value="Separado">Separado</option>
+                    <option value="Divorciado">Divorciado</option>
+                    <option value="Viuvo">Viúvo</option>
+                    <option value="Amasiado">Amasiado</option>
+                  </select>
                 </div>
               </div>
-              <!-- Col -->
-
+              <!--==========================================-->
               <div class="col-sm-4">
                 <div class="form-group">
-                  <label class="control-label">CEP / ZIP</label>
-                  <input type="text" class="form-control" placeholder="" />
+                  <label class="control-label">Escolaridade</label>
+                  <select
+                    name="estado_civil"
+                    class="form-control"
+                    id="inputEstadoCivil"
+                  >
+                    <option value="Ensino Fundamental">
+                      Ensino Fundamental
+                    </option>
+                    <option value="Ensino Medio">Ensino Médio</option>
+                    <option value="Ensino Superior">Ensino Superior</option>
+                    <option value="Ensino Fundamental Incompleto">
+                      Ensino Fundamental Incompleto
+                    </option>
+                    <option value="Ensino Medio Incompleto">
+                      Ensino Médio Incompleto
+                    </option>
+                    <option value="Ensino Superior Incompleto">
+                      Ensino Superior Incompleto
+                    </option>
+                  </select>
                 </div>
               </div>
-              <!-- Col -->
             </div>
+            <!--==========================================-->
+            <div class="sexo__container">
+              <p style="margin-top: 1.5rem">Sexo</p>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="option1"
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Masculino</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="option1"
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Feminino</label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="option1"
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  >Outro / Prefiro não responder</label
+                >
+              </div>
+            </div>
+            <!--==========================================-->
+
             <!-- Row -->
             <!-- ========================== EMAIL E SENHA
             <div class="row">
@@ -204,7 +271,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <div class="form-group">
-                  <label class="control-label">Nome</label>
+                  <label class="control-label">País</label>
                   <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
@@ -212,7 +279,7 @@
 
               <div class="col-sm-6">
                 <div class="form-group">
-                  <label class="control-label">Sobrenome</label>
+                  <label class="control-label">Estado</label>
                   <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
@@ -231,7 +298,7 @@
 
               <div class="col-sm-4">
                 <div class="form-group">
-                  <label class="control-label">Estado</label>
+                  <label class="control-label">Endereço</label>
                   <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
