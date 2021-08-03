@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
+:root {
+  --green-blue-crayola: #008dd0ff;
+  --green-ryb: #83b644ff;
+  --orange-peel: #f59e1cff;
+  --vermilion: #e6341cff;
+  --pewter-blue: rgb(118, 142, 148);
+  --blue-sapphire: #145f7fff;
+  --white: #ffffffff;
+  /* ========================================== font ============================= */
+  --body-font: "Open Sans", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  /* FONT WEIGHT */
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #f8edeb; */
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+header img {
+  width: 100px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.nav-item {
+  margin-right: 5rem;
+  margin-left: 3rem;
+}
+
+.row {
+  margin-top: 1.5rem;
+}
+
+.contact__button {
+  margin-right: 1rem;
+}
+
+.panel-footer {
+  margin-bottom: 5rem;
+}
+
+.panel-heading {
+  margin-top: 3rem;
+}
+
+.pull-right {
+  margin-top: 1.5rem;
+}
+
+.wide-limit {
+  width: 100vw;
+  height: 70vh;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+}
