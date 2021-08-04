@@ -178,7 +178,11 @@
             </div>
             <!--==========================================-->
             <div class="sexo__container">
-              <p style="margin-top: 1.5rem">Sexo</p>
+              <p
+                style="margin-top: 1.5rem; font-size: 1.25rem; font-weight: 600"
+              >
+                Sexo
+              </p>
               <div class="form-check form-check-inline">
                 <input
                   class="form-check-input"
@@ -269,7 +273,7 @@
         <div class="panel-body">
           <form>
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-3">
                 <div class="form-group">
                   <label class="control-label">País</label>
                   <input type="text" class="form-control" placeholder="" />
@@ -277,9 +281,23 @@
               </div>
               <!-- Col -->
 
-              <div class="col-sm-6">
+              <div class="col-sm-2">
                 <div class="form-group">
                   <label class="control-label">Estado</label>
+                  <input type="text" class="form-control" placeholder="" />
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="control-label">Cidade</label>
+                  <input type="text" class="form-control" placeholder="" />
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="control-label">Bairro</label>
                   <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
@@ -290,29 +308,100 @@
             <div class="row">
               <div class="col-sm-4">
                 <div class="form-group">
-                  <label class="control-label">Cidade</label>
+                  <label class="control-label">Logradouro</label>
                   <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
               <!-- Col -->
 
-              <div class="col-sm-4">
+              <div class="col-sm-1">
                 <div class="form-group">
-                  <label class="control-label">Endereço</label>
+                  <label class="control-label">Número</label>
                   <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
-              <!-- Col -->
-
-              <div class="col-sm-4">
+              <div class="col-sm-7">
                 <div class="form-group">
-                  <label class="control-label">CEP / ZIP</label>
+                  <label class="control-label">Complemento</label>
                   <input type="text" class="form-control" placeholder="" />
                 </div>
               </div>
               <!-- Col -->
             </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="control-label">Email</label>
+                  <input type="text" class="form-control" placeholder="" />
+                </div>
+              </div>
+              <!-- Col -->
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="control-label">Telefone 1</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="(00) 00000-0000"
+                  />
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="control-label">Telefone 2</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Opcional"
+                  />
+                </div>
+              </div>
+            </div>
             <!-- Row -->
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================== DADOS DE INSCRIÇÃO ===============================-->
+    <div class="container dados__inscricao">
+      <div class="panel panel-default p-4">
+        <div class="panel-heading">
+          <h3 class="panel-title" id="dados">Inscrição</h3>
+        </div>
+        <div class="panel-body">
+          <form>
+            <!--==========================================-->
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="control-label">Atestado de Matrícula</label>
+                  <input type="file" class="form-control" placeholder="" />
+                </div>
+              </div>
+              <!--==========================================-->
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label class="control-label">Histórico Escolar</label>
+                  <input type="file" class="form-control" placeholder="" />
+                </div>
+              </div>
+              <!--==========================================-->
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-text">Carta de Intenção</span>
+                  <textarea
+                    class="form-control"
+                    aria-label="With textarea"
+                    placeholder="Apresente-se! Escreva um resumo sobre quem você é, no que acredita e por que tem interesse na nossa empresa. "
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
             <!-- ========================== EMAIL E SENHA
             <div class="row">
               <div class="col-sm-6">
