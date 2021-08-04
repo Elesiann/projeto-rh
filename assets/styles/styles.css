@@ -61,7 +61,7 @@ textarea {
 
 .wide-limit {
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
 }
 
 .pull-right {
@@ -90,7 +90,7 @@ textarea {
   object-fit: cover;
   object-position: center;
   width: 100vw;
-  height: 90vh;
+  height: 60vh;
   overflow: hidden;
 }
 /* =============================== CAROUSEL ==================================== */
@@ -104,6 +104,14 @@ textarea {
 
 .btn-info:hover {
   background-color: var(--orange-peel);
+}
+
+.reset {
+  margin-right: 1rem;
+}
+
+.reset:hover {
+  background-color: var(--vermilion);
 }
 
 .contact__button {
@@ -144,15 +152,13 @@ textarea {
 
 /* ================================= FOOTER ====================================== */
 #footer {
-  background: var(--orange-peel);
-  padding: 0 0 30px 0;
+  border-top: 2px solid var(--titanium);
+  padding: 0 0 2rem 0;
   color: #fff;
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 #footer .footer-top {
-  background: var(--blue-sapphire);
-  border-bottom: 1px solid #474747;
   padding: 60px 0 30px 0;
 }
 
@@ -251,11 +257,9 @@ textarea {
   line-height: 26px;
 }
 
-#footer .copyright {
-  text-align: center;
-  padding-top: 30px;
-  display: flex;
-  justify-content: space-between;
+.copyright {
+  background-color: var(--orange-peel);
+  width: 100%;
 }
 
 #footer .credits {
