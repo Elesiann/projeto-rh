@@ -4,7 +4,7 @@
   --green-ryb: #83b644ff;
   --orange-peel: #f59e1cff;
   --vermilion: #e6341cff;
-  --pewter-blue: rgb(167, 209, 221);
+  --pewter-blue: #3e6e7a;
   --blue-sapphire: #145f7fff;
   --white: #ffffffff;
   --titanium: #f7f6f3;
@@ -23,6 +23,7 @@
   --font-bold: 800;
 }
 
+/* =============================== CSS GLOBAL ==================================== */
 * {
   margin: 0;
   padding: 0;
@@ -38,9 +39,14 @@ header img {
   width: 100px;
 }
 
-.panel {
-  background-color: var(--blue-sapphire);
+label {
+  font-size: 1.25rem;
   color: var(--titanium);
+  font-weight: 600;
+}
+
+textarea {
+  resize: none;
 }
 
 .center {
@@ -49,25 +55,74 @@ header img {
   margin: auto;
 }
 
+.row {
+  margin-top: 1.5rem;
+}
+
+.wide-limit {
+  width: 100vw;
+  height: 90vh;
+}
+
+.pull-right {
+  margin-top: 1.5rem;
+}
+/* =============================== CSS GLOBAL ==================================== */
+
+/* =============================== NAV ==================================== */
 .nav-item {
   margin-right: 5rem;
   margin-left: 3rem;
   font-size: 1.25rem;
 }
 
-label {
-  font-size: 1.25rem;
-  color: var(--titanium);
-  font-weight: 600;
+.nav-item a {
+  color: var(--green-ryb) !important;
 }
 
-.row {
-  margin-top: 1.5rem;
+.nav-item a:hover {
+  color: var(--orange-peel) !important;
+}
+/* =============================== NAV ==================================== */
+
+/* =============================== CAROUSEL ==================================== */
+.carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  width: 100vw;
+  height: 90vh;
+  overflow: hidden;
+}
+/* =============================== CAROUSEL ==================================== */
+
+/* =============================== BTN ==================================== */
+.btn-info {
+  color: #000;
+  background-color: var(--green-ryb);
+  border: none;
+}
+
+.btn-info:hover {
+  background-color: var(--orange-peel);
 }
 
 .contact__button {
   margin-right: 1rem;
 }
+
+/* =============================== BTN ==================================== */
+
+/* =============================== PANEL ==================================== */
+.panel {
+  background: rgb(20, 31, 65);
+  background: linear-gradient(
+    0deg,
+    rgb(20, 31, 65) 10%,
+    rgba(106, 168, 184, 1) 80%
+  );
+  color: var(--titanium);
+}
+
 .panel-title {
   text-align: center;
   font-size: 2.25rem;
@@ -82,33 +137,132 @@ label {
   margin-top: 1rem;
 }
 
-.pull-right {
-  margin-top: 1.5rem;
-}
-
-.wide-limit {
-  width: 100vw;
-  height: 90vh;
-}
-
-.dados__principais {
-  margin-top: 2rem;
-}
-
-.carousel-item img {
-  object-fit: cover;
-  object-position: center;
-  width: 100vw;
-  height: 90vh;
-  overflow: hidden;
-}
-
 .sexo__container {
   text-align: center;
 }
+/* =============================== PANEL ==================================== */
 
-textarea {
-  resize: none;
+/* ================================= FOOTER ====================================== */
+#footer {
+  background: var(--orange-peel);
+  padding: 0 0 30px 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+#footer .footer-top {
+  background: var(--blue-sapphire);
+  border-bottom: 1px solid #474747;
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-info h3 {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 1.5rem;
+  display: inline-block;
+  background: var(--orange-peel);
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+  background: var(--green-ryb);
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 1.5rem;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #ec7f6d;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: var(--orange-peel);
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact p {
+  line-height: 26px;
+}
+
+#footer .copyright {
+  text-align: center;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
 }
 
 @media (min-width: 992px) {
