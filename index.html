@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/styles/styles.css" />
 
     <!-- ========================== FAVICON ========================== -->
-    <link rel="icon" href="assets/favicon.png" />
+    <link rel="icon" href="assets//img/favicon.png" />
 
     <!-- ========================== REMIX ICONS ==========================  -->
     <link
@@ -52,7 +52,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <!--======== Logo ========-->
             <a class="navbar-brand" href="#">
-              <img src="/assets/logo.png" style="width: 75px"
+              <img src="/assets/img/logo.png" style="width: 75px"
             /></a>
             <!--=======================-->
             <ul class="navbar-nav">
@@ -108,22 +108,22 @@
     <div class="panel">
       <!--========================== DADOS PRINCIPAIS =================================-->
       <div class="container dados__principais" id="principais">
-        <div class="panel-default p-4">
+        <div class="panel-default p-4 ">
           <div class="panel-heading">
             <h3 class="panel-title" id="dados">Dados principais</h3>
           </div>
           <div class="panel-body">
             <form>
               <!--==========================================-->
-              <div class="row">
-                <div class="col-sm-6">
+              <div class="col">
+                <div class="col-sm-12 flex-fill justify-content-center">
                   <div class="form-group">
                     <label class="control-label">Nome</label>
                     <input type="text" class="form-control" placeholder="" />
                   </div>
                 </div>
                 <!--==========================================-->
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                   <div class="form-group">
                     <label class="control-label">Sobrenome</label>
                     <input type="text" class="form-control" placeholder="" />
@@ -131,15 +131,15 @@
                 </div>
               </div>
               <!--==========================================-->
-              <div class="row">
-                <div class="col-sm-4">
+              <div class="col">
+                <div class="col-sm-8">
                   <div class="form-group">
                     <label class="control-label">Data de Nascimento</label>
                     <input type="date" class="form-control" placeholder="" />
                   </div>
                 </div>
                 <!--==========================================-->
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                   <div class="form-group">
                     <label class="control-label">Estado civil</label>
                     <select
@@ -157,7 +157,7 @@
                   </div>
                 </div>
                 <!--==========================================-->
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                   <div class="form-group">
                     <label class="control-label">Escolaridade</label>
                     <select
@@ -194,41 +194,17 @@
                 >
                   Sexo
                 </p>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                  />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Masculino</label
-                  >
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Default radio
+                  </label>
                 </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                  />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Feminino</label
-                  >
-                </div>
-                <div class="form-check form-check-inline">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="inlineRadioOptions"
-                    id="inlineRadio1"
-                    value="option1"
-                  />
-                  <label class="form-check-label" for="inlineRadio1"
-                    >Outro / Prefiro não responder</label
-                  >
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Default checked radio
+                  </label>
                 </div>
               </div>
             </form>
@@ -236,15 +212,15 @@
         </div>
       </div>
       <!--============================== DADOS PARA CONTATO=============================-->
-      <div class="container dados__contato" id="contato">
+      <div class="container dados__contato justify-content-center" id="contato">
         <div class="panel-default p-4">
           <div class="panel-heading">
             <h3 class="panel-title" id="dados">Dados para contato</h3>
           </div>
           <div class="panel-body">
             <form>
-              <div class="row">
-                <div class="col-sm-3">
+              <div class="col">
+                <div class="col-sm-12">
                   <div class="form-group">
                     <label class="control-label">País</label>
                     <input type="text" class="form-control" placeholder="" />
@@ -252,14 +228,14 @@
                 </div>
                 <!-- Col -->
 
-                <div class="col-sm-2">
+                <div class="col-sm-12">
                   <div class="form-group">
                     <label class="control-label">Estado</label>
                     <input type="text" class="form-control" placeholder="" />
                   </div>
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col-sm-12">
                   <div class="form-group">
                     <label class="control-label">Cidade</label>
                     <input type="text" class="form-control" placeholder="" />
@@ -274,9 +250,8 @@
                 </div>
                 <!-- Col -->
               </div>
-              <!-- Row -->
 
-              <div class="row">
+              <div class="col">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label class="control-label">Logradouro</label>
@@ -299,7 +274,7 @@
                 </div>
                 <!-- Col -->
               </div>
-              <div class="row">
+              <div class="col">
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label class="control-label">Email</label>
@@ -329,7 +304,6 @@
                   </div>
                 </div>
               </div>
-              <!-- Row -->
             </form>
           </div>
         </div>
@@ -344,8 +318,8 @@
           <div class="panel-body">
             <form>
               <!--==========================================-->
-              <div class="row">
-                <div class="col-sm-6">
+              <div class="col">
+                <div class="col-sm-12">
                   <div class="form-group">
                     <label class="control-label d-flex justify-content-center"
                       >Atestado de Matrícula</label
@@ -354,7 +328,7 @@
                   </div>
                 </div>
                 <!--==========================================-->
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                   <div class="form-group">
                     <label class="control-label d-flex justify-content-center"
                       >Histórico Escolar</label
@@ -364,7 +338,7 @@
                 </div>
                 <!--==========================================-->
               </div>
-              <div class="row justify-content-center">
+              <div class="col justify-content-center">
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label
@@ -382,25 +356,8 @@
                 </div>
               </div>
 
-              <!-- ========================== EMAIL E SENHA 
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="control-label">Email</label>
-                  <input type="email" class="form-control" placeholder="" />
-                </div>
-              </div>
-
-              <div class="col-sm-6">
-                <div class="form-group">
-                  <label class="control-label">Senha</label>
-                  <input type="password" class="form-control" placeholder="" />
-                </div>
-              </div>
-            </div>
-            --></form>
+              </form>
           </div>
-          <!-- Row -->
 
           <div class="panel-footer">
             <div class="row">

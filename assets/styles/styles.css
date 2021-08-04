@@ -121,6 +121,7 @@ textarea {
 /* =============================== BTN ==================================== */
 
 /* =============================== PANEL ==================================== */
+
 .panel {
   background: rgb(20, 31, 65);
   background: linear-gradient(
@@ -146,7 +147,19 @@ textarea {
 }
 
 .sexo__container {
-  text-align: center;
+  text-align: left;
+}
+
+#principais {
+  width: 50vw;
+}
+
+#contato {
+  width: 50vw;
+}
+
+#inscricao {
+  width: 50vw;
 }
 /* =============================== PANEL ==================================== */
 
