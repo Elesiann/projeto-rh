@@ -289,3 +289,9 @@ textarea {
     justify-content: space-around;
   }
 }
+
+@media (max-width: 768px) {
+  #principais {
+    width: 100vw;
+  }
+}
