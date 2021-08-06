@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/assets/styles/login.css" />
+    <link rel="stylesheet" href="/assets/styles/register.css" />
     <!-- Required meta tags-->
     <meta charset="UTF-8" />
     <meta
@@ -58,6 +58,7 @@
                       class="input--style-4"
                       type="text"
                       name="first_name"
+                      required
                     />
                   </div>
                 </div>
@@ -68,6 +69,7 @@
                       class="input--style-4"
                       type="text"
                       name="last_name"
+                      required
                     />
                   </div>
                 </div>
@@ -81,6 +83,7 @@
                         class="input--style-4 js-datepicker"
                         type="date"
                         name="birthday"
+                        required
                       />
                       <i
                         class="
@@ -98,12 +101,17 @@
                     <div class="p-t-10">
                       <label class="radio-container m-r-45"
                         >Masculino
-                        <input type="radio" checked="checked" name="gender" />
+                        <input
+                          type="radio"
+                          checked="checked"
+                          name="gender"
+                          required
+                        />
                         <span class="checkmark"></span>
                       </label>
                       <label class="radio-container"
                         >Feminino
-                        <input type="radio" name="gender" />
+                        <input type="radio" name="gender" required />
                         <span class="checkmark"></span>
                       </label>
                     </div>
@@ -114,17 +122,23 @@
                 <div class="col-2">
                   <div class="input-group">
                     <label class="label">Email</label>
-                    <input class="input--style-4" type="email" name="email" />
+                    <input
+                      class="input--style-4"
+                      type="email"
+                      name="email"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="col-2">
                   <div class="input-group">
-                    <label class="label">Telefone</label>
+                    <label class="label">Senha</label>
                     <input
                       class="input--style-4"
-                      type="text"
-                      name="phone"
-                      placeholder="Somente números"
+                      type="password"
+                      name="password"
+                      placeholder=""
+                      required
                     />
                   </div>
                 </div>
@@ -155,6 +169,4 @@
     <!-- Main JS-->
     <script src="js/global.js"></script>
   </body>
-  <!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
-<!-- end document-->
