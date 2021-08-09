@@ -31,6 +31,10 @@
   /* background-color: #f8edeb; */
 }
 
+h3 {
+  margin-top: 1rem;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -82,9 +86,8 @@ textarea {
 
 .nav-item a:hover {
   color: var(--orange-peel) !important;
+  /* =============================== NAV ==================================== */
 }
-/* =============================== NAV ==================================== */
-
 /* =============================== CAROUSEL ==================================== */
 .carousel-item img {
   object-fit: cover;
@@ -95,37 +98,40 @@ textarea {
 }
 /* =============================== CAROUSEL ==================================== */
 
-/* =============================== BTN ==================================== */
-.btn-info {
-  color: #000;
-  background-color: var(--green-ryb);
-  border: none;
+/* =============================== CURRICULUM ==================================== */
+.curriculum__center {
+  display: flex;
+  justify-content: center;
 }
 
-.btn-info:hover {
-  background-color: var(--orange-peel);
+.curriculum__background {
+  width: 60vw;
+  height: auto;
+  background-color: red;
 }
 
-.reset {
-  margin-right: 1rem;
+.experience__content {
+  width: 60vwpx;
+  height: auto;
+  padding: 28px;
+  background-color: blue;
+}
+/* =============================== CURRICULUM ==================================== */
+
+.li__container {
+  margin-top: 1rem;
 }
 
-.reset:hover {
-  background-color: var(--vermilion);
+.li__container ul {
+  list-style: none;
 }
 
-.contact__button {
-  margin-right: 1rem;
+.send-span {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
 }
-
-.submit-button {
-  background-color: var(--blue-sapphire);
-}
-.submit-button:hover {
-  background-color: var(--pewter-blue);
-}
-
-/* =============================== BTN ==================================== */
 
 /* =============================== PANEL ==================================== */
 
@@ -152,23 +158,6 @@ textarea {
 .panel-heading {
   margin-top: 1rem;
 }
-
-.sexo__container {
-  text-align: left;
-}
-
-#principais {
-  width: 50vw;
-}
-
-#contato {
-  width: 80vw;
-}
-
-#inscricao {
-  width: 50vw;
-}
-/* =============================== PANEL ==================================== */
 
 /* ================================= FOOTER ====================================== */
 #footer {
@@ -289,22 +278,8 @@ textarea {
   color: #fff;
 }
 
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-    justify-content: space-around;
-  }
-  #contato {
-    width: 50vw;
-  }
-}
-
-@media (max-width: 768px) {
-  #principais {
-    width: 100vw;
-  }
-  #contato {
+@media (max-width: 992px) {
+  .curriculum__background {
     width: 80vw;
   }
 }

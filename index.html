@@ -61,159 +61,61 @@
             </div>
         </div>
     </div>
-
     <!--========================== PAINEL TOTAL =================================-->
-    <div class="panel">
-        <!--========================== DADOS PRINCIPAIS =================================-->
-        <!--
-        <div class="container dados__principais " id="principais">
-            <h3 class="panel-title pt-5 pb-3" id="dados">Dados Principais</h3>
-            <div class="container">
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="mb-3">
-                        <label class="form-label" for="nomeCompleto">Nome Completo</label>
-                        <input class="form-control" id="nomeCompleto" type="text" data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="nomeCompleto:required">Nome Completo is
-                            required.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="dataDeNascimento">Data de Nascimento</label>
-                        <input class="form-control" id="dataDeNascimento" type="date" placeholder="Data de Nascimento"
-                            data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="dataDeNascimento:required">Data de Nascimento is
-                            required.
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="nacionalidade">Nacionalidade</label>
-                        <input class="form-control" id="nacionalidade" type="text" data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="nacionalidade:required">Nacionalidade is
-                            required.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="estadoCivil">Estado Civil</label>
-                        <select class="form-select" id="estadoCivil" aria-label="Estado Civil">
-                            <option value="Solteiro">Solteiro</option>
-                            <option value="Casado">Casado</option>
-                            <option value="Separado">Separado</option>
-                            <option value="Divorciado">Divorciado</option>
-                            <option value="Viúvo">Viúvo</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="escolaridade">Escolaridade</label>
-                        <select class="form-select" id="escolaridade" aria-label="Escolaridade">
-                            <option value="Ensino Fundamental">Ensino Fundamental</option>
-                            <option value="Ensino Médio">Ensino Médio</option>
-                            <option value="Ensino Superior">Ensino Superior</option>
-                            <option value="Pós-graduação">Pós-graduação</option>
-                            <option value="Fundamental - Incompleto">Fundamental - Incompleto</option>
-                            <option value="Médio - Incompleto">Médio - Incompleto</option>
-                            <option value="Superior - Incompleto">Superior - Incompleto</option>
-                            <option value="Pós-graduação - Incompleto">Pós-graduação - Incompleto</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label d-block">Sexo</label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="masculino" type="radio" name="sexo"
-                                data-sb-validations="" />
-                            <label class="form-check-label" for="masculino">Masculino</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="feminino" type="radio" name="sexo"
-                                data-sb-validations="" />
-                            <label class="form-check-label" for="feminino">Feminino</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" id="outroPrefiroNaoInformar" type="radio" name="sexo"
-                                data-sb-validations="" />
-                            <label class="form-check-label" for="outroPrefiroNaoInformar">Outro / Prefiro não
-                                informar</label>
-                        </div>
-                    </div>
-            </div>
-        </div>
-        -->
-        
-        <!--============================== DADOS PARA CONTATO=============================-->
-        <div class="container dados__contato justify-content-center" id="contato">
-            <h3 class="panel-title pt-5 pb-1" id="dados">Dados para Contato</h3>
-    <div class="pt-3">
-        <form id="contactForm">
-                <div class="row">
-                    <div class="mb-3 col-8">
-                        <label class="form-label" for="logradouro">Logradouro</label>
-                        <input class="form-control" id="logradouro" type="text" data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="endereco:required">Logradouro is required.</div>
-                    </div>
-                    <div class="mb-3 col">
-                        <label class="form-label" for="numero">Número</label>
-                        <input class="form-control" id="numero" type="number"/>
-                    </div>
-                </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="complemento">Complemento</label>
-                        <input class="form-control" id="complemento" type="text" placeholder="Opcional"
-                            data-sb-validations="" />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="bairro">Bairro</label>
-                        <input class="form-control" id="bairro" type="text" data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="bairro:required">Bairro is required.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="cidade">Cidade</label>
-                        <input class="form-control" id="cidade" type="text" data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="paisDeResidencia:required">Cidade is required.
-                        </div>
-                    </div>
-                <div class="row">
-                    <div class="mb-3 col-6">
-                        <label class="form-label" for="estado">Estado</label>
-                        <select class="form-select" id="estado" aria-label="Estado">
-                            <option value="">Selecione</option>
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espirito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
-                        </select>
-                    </div>
-                    <div class="mb-3 col">
-                        <label class="form-label" for="cepZi">CEP </label>
-                        <input class="form-control" id="cep" type="email">
-                </div>
-                <h3 class="panel-title pt-5 pb-1" id="dados">Criação de Cúrriculo</h3>
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-primary mb-5 mt-3 "> Enviar inscrição </button>
-                </div>
-            </div>
-        </div>
-     </form>
 
+    <div class="panel">
+        <!--========================== CURRICULUM =================================-->
+        <div class="curriculum__center">
+            <div class="curriculum__background my-5">
+                <div class="curriculum__content p-4">
+                    <h3 class="sobre-candidato fw-bold">Fale sobre você!</h3>
+                    <div class="form-group">
+                        <textarea class="form-control"
+                        id="sobrecandidato" 
+                        placeholder="Fale sobre o que você nos têm a oferecer, sua vida e sua história... " rows="3"></textarea>
+                    </div>
+
+                    <h2 class="sobre-candidato text-center mt-3 fw-bold"> Suas experiências </h2>
+                    <div class="experience__container">
+                        <form action="" class="row g-3 experience__content">
+                            <div class="col-md-12">
+                                <h3 class="fw-bold">Experiência</h3>
+                                <label for="cargo" class="form-label">Cargo</label>
+                                <input type="text" class="form-control" id="cargo">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="cargo" class="form-label">Local</label>
+                                <input type="text" class="form-control" id="cargo">
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <textarea class="form-control"
+                                id="sobreexperiência" 
+                                placeholder="Escreva sobre suas atividades e/ou conquistas neste emprego. " rows="3"></textarea>
+                            </div>
+
+                            <div class="my-3">
+                                <label for="formFile" class="form-label">Comprovante</label>
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+
+                            <div class="send-button ">
+                                <button class="btn btn-primary w-100" type="submit">
+                                    Enviar
+                                </button>
+                                <span class="send-span">Você poderá adicionar mais experiências ao enviar</span>
+                            </div>
+                            
+                        </form>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
         <!-- =========================== FOOTER ==================================== -->
         <footer id="footer">
             <div class="footer-top">
@@ -347,6 +249,8 @@
         crossorigin="anonymous"></script>
 
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script src="/assets/js/list.js"></script>
 
 </body>
 
