@@ -59,10 +59,6 @@ textarea {
   margin: auto;
 }
 
-.row {
-  margin-top: 1.5rem;
-}
-
 .wide-limit {
   width: 100vw;
   height: 80vh;
@@ -78,6 +74,11 @@ textarea {
   margin-right: 5rem;
   margin-left: 3rem;
   font-size: 1.25rem;
+}
+
+#navbarNav {
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav-item a {
@@ -107,14 +108,13 @@ textarea {
 .curriculum__background {
   width: 60vw;
   height: auto;
-  background-color: red;
+  background-color: blue;
 }
 
 .experience__content {
   width: 60vwpx;
   height: auto;
-  padding: 28px;
-  background-color: blue;
+  background-color: red;
 }
 /* =============================== CURRICULUM ==================================== */
 
@@ -132,6 +132,10 @@ textarea {
   margin-top: 0.5rem;
   font-size: 0.8rem;
 }
+
+/* =============================== STARS ==================================== */
+
+/* =============================== STARS ==================================== */
 
 /* =============================== PANEL ==================================== */
 
