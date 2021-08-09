@@ -38,18 +38,6 @@
                     <a class="navbar-brand" href="#">
                         <img src="/assets/img/logo.png" style="width: 75px" /></a>
                     <!--=======================-->
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#principais">Dados principais</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contato">Dados p/ contato</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#inscricao">Inscrição</a>
-                        </li>
-                    </ul>
-
                     <button class="btn btn-info ms-5 text-white">Dúvidas?</button>
                 </div>
             </div>
@@ -150,38 +138,20 @@
         
         <!--============================== DADOS PARA CONTATO=============================-->
         <div class="container dados__contato justify-content-center" id="contato">
-            <h3 class="panel-title pt-5 pb-3" id="dados">Dados para Contato</h3>
-            <div class="container pt-5">
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-
-                    <div class="mb-3">
-                        <label class="form-label" for="emailParaContato">Email para contato</label>
-                        <input class="form-control" id="emailParaContato" type="email"
-                            data-sb-validations="required,email" />
-                        <div class="invalid-feedback" data-sb-feedback="emailParaContato:required">Email é necessário.
-                        </div>
-                        <div class="invalid-feedback" data-sb-feedback="emailParaContato:email">Email não está válido
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="numeroDeTelefone">Número de telefone</label>
-                        <input class="form-control" id="numeroDeTelefone" type="text" placeholder="(00) 00000-0000"
-                            data-sb-validations="required" />
-                        <div class="invalid-feedback" data-sb-feedback="numeroDeTelefone:required">Número de telefone is
-                            required.
-                        </div>
-                    </div>
-                    <div class="mb-3">
+            <h3 class="panel-title pt-5 pb-1" id="dados">Dados para Contato</h3>
+    <div class="pt-3">
+        <form id="contactForm">
+                <div class="row">
+                    <div class="mb-3 col-8">
                         <label class="form-label" for="logradouro">Logradouro</label>
                         <input class="form-control" id="logradouro" type="text" data-sb-validations="required" />
                         <div class="invalid-feedback" data-sb-feedback="endereco:required">Logradouro is required.</div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 col">
                         <label class="form-label" for="numero">Número</label>
-                        <input class="form-control" id="numero" type="number" data-sb-validations="required"
-                            placeholder="Deixe vazio caso não tenha número" />
-                        <div class="invalid-feedback" data-sb-feedback="numero:required">Número is required.</div>
+                        <input class="form-control" id="numero" type="number"/>
                     </div>
+                </div>
                     <div class="mb-3">
                         <label class="form-label" for="complemento">Complemento</label>
                         <input class="form-control" id="complemento" type="text" placeholder="Opcional"
@@ -198,7 +168,8 @@
                         <div class="invalid-feedback" data-sb-feedback="paisDeResidencia:required">Cidade is required.
                         </div>
                     </div>
-                    <div class="mb-3">
+                <div class="row">
+                    <div class="mb-3 col-6">
                         <label class="form-label" for="estado">Estado</label>
                         <select class="form-select" id="estado" aria-label="Estado">
                             <option value="">Selecione</option>
@@ -231,13 +202,13 @@
                             <option value="TO">Tocantins</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="cepZip">CEP / ZIP</label>
-                        <input class="form-control" id="cepZip" type="email" data-sb-validations="required,email" />
-                        <div class="invalid-feedback" data-sb-feedback="cepZip:required">CEP / ZIP is required.</div>
-                    </div>
-                    <div class="d-grid">
-                    <button type="submit" class="btn btn-primary mb-5 mt-3"> Enviar e seguir para criação de Currículo </button>
+                    <div class="mb-3 col">
+                        <label class="form-label" for="cepZi">CEP </label>
+                        <input class="form-control" id="cep" type="email">
+                </div>
+                <h3 class="panel-title pt-5 pb-1" id="dados">Criação de Cúrriculo</h3>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary mb-5 mt-3 "> Enviar inscrição </button>
                 </div>
             </div>
         </div>
@@ -359,8 +330,8 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
-    </div>
     <div class="copyright p-4">
         <div class="d-flex justify-content-around">
             Av. Presidente Vargas, 100 - Imbituba CEP 88780-000 - Santa Catarina,

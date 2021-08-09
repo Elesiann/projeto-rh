@@ -118,6 +118,13 @@ textarea {
   margin-right: 1rem;
 }
 
+.submit-button {
+  background-color: var(--blue-sapphire);
+}
+.submit-button:hover {
+  background-color: var(--pewter-blue);
+}
+
 /* =============================== BTN ==================================== */
 
 /* =============================== PANEL ==================================== */
@@ -155,7 +162,7 @@ textarea {
 }
 
 #contato {
-  width: 50vw;
+  width: 80vw;
 }
 
 #inscricao {
@@ -288,10 +295,16 @@ textarea {
     flex-basis: auto;
     justify-content: space-around;
   }
+  #contato {
+    width: 50vw;
+  }
 }
 
 @media (max-width: 768px) {
   #principais {
     width: 100vw;
+  }
+  #contato {
+    width: 80vw;
   }
 }
