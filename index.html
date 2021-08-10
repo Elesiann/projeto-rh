@@ -33,10 +33,6 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light text-white">
             <div class="container-fluid">
-                <button class="navbar-toggler me-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <!--======== Logo ========-->
                     <a class="navbar-brand" href="#">
@@ -80,11 +76,18 @@
                     </div>
                     <h2 class="sobre-candidato text-center mt-5 fw-bold"> Suas experiências </h2>
                     <div class="experience__container">
-                        <form action="" class="row g-3 experience__content">
-                            <div class="col-md-12">
-                                <h3 class="fw-bold">Experiência</h3>
+                        <form action="" class="row g-3 experience__content p-5">
+                            <div class="col-md-6">
                                 <label for="cargo" class="form-label">Cargo</label>
                                 <input type="text" class="form-control" id="cargo">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="cargo" class="form-label">Início</label>
+                                <input type="date" class="form-control" id="cargo">
+                            </div>
+                            <div class="col-md-3">
+                                <label for="cargo" class="form-label">Fim</label>
+                                <input type="date" class="form-control" id="cargo">
                             </div>
                             <div class="col-md-12">
                                 <label for="cargo" class="form-label">Local</label>
@@ -110,26 +113,42 @@
 
 
                     <h3 class="fw-bold d-flex justify-content-center">Competências</h3>
-                    <div class="container justify-content-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="container d-flex justify-content-start">
-                                <div class="row d-flex justify-content-start">
 
-                                    <label for=""> Excel</label>
+                            <div class="container justify-content-center"></div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-md-8">
+                                    <label for="" class="text-center d-flex justify-content-center">Excel </label>
                                     <select class="form-select" aria-label="Default select example">
-                                        
                                         <option value="1">basico</option>
                                         <option value="2">intermediario</option>
                                         <option value="3">CHUCK NORRIS</option>
                                       </select>
-
+                                    </div>
                                 </div>
-                              </div>
 
-                        </div>
-                    </div>
-                    
-                    
+                            <div class="container justify-content-center"></div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-md-8">
+                                    <label for="" class="text-center d-flex justify-content-center">Powerpinto </label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1">basico</option>
+                                        <option value="2">intermediario</option>
+                                        <option value="3">CHUCK NORRIS</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            <div class="container justify-content-center"></div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-md-8">
+                                    <label for="" class="text-center d-flex justify-content-center">Calculadora </label>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="1">basico</option>
+                                        <option value="2">intermediario</option>
+                                        <option value="3">CHUCK NORRIS</option>
+                                      </select>
+                                    </div>
+                                </div>
+                            
                 </div>             
             </div>     
         </div>
