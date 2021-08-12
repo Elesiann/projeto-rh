@@ -3,6 +3,7 @@
   --green-blue-crayola: #008dd0ff;
   --green-ryb: #83b644ff;
   --orange-peel: #f59e1cff;
+  --orange-peel-darker: rgb(211, 139, 31);
   --vermilion: #e6341cff;
   --pewter-blue: #3e6e7a;
   --blue-sapphire: #145f7fff;
@@ -133,9 +134,17 @@ textarea {
   font-size: 0.8rem;
 }
 
-/* =============================== RATING ==================================== */
+/* =============================== BUTTON ==================================== */
+.btn-primary {
+  background-color: var(--orange-peel);
+  border: none;
+}
 
-/* =============================== RATING ==================================== */
+.btn-primary:hover {
+  background-color: var(--orange-peel-darker);
+  border: none;
+}
+/* =============================== BUTTON ==================================== */
 
 /* =============================== PANEL ==================================== */
 
