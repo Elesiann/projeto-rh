@@ -109,13 +109,15 @@ textarea {
 .curriculum__background {
   width: 60vw;
   height: auto;
-  background-color: ;
 }
 
 .experience__content {
   width: 60vwpx;
   height: auto;
-  background-color: ;
+}
+
+.textarea-about {
+  height: 400px;
 }
 /* =============================== CURRICULUM ==================================== */
 
@@ -143,6 +145,24 @@ textarea {
 .btn-primary:hover {
   background-color: var(--orange-peel-darker);
   border: none;
+}
+
+.navigation__buttons a {
+  font-size: 3rem;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.button__left,
+.button__right {
+  color: white;
+}
+
+.button__left:hover {
+  color: var(--vermilion);
+}
+
+.button__right:hover {
+  color: var(--green-ryb);
 }
 /* =============================== BUTTON ==================================== */
 

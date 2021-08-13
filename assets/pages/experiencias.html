@@ -8,7 +8,8 @@
     <title>SCPar | RH</title>
 
     <!-- ========================== FONTAWESOME ========================== -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
 
 
     <!-- ========================== BOX ICONS ========================== -->
@@ -19,10 +20,10 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <!-- ========================== CSS ========================== -->
-    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <link rel="stylesheet" href="/assets/styles/styles.css" />
 
     <!-- ========================== FAVICON ========================== -->
-    <link rel="icon" href="assets/img/favicon.png" />
+    <link rel="icon" href="/assets/img/favicon.png" />
 
     <!-- ========================== REMIX ICONS ==========================  -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
@@ -65,12 +66,19 @@
 
     <div class="panel">
         <!--========================== CURRICULUM EXPERIENCE =================================-->
+        <div class="navigation__buttons-container">
+            <div class="navigation__buttons d-flex justify-content-between">
+                <a href="/assets/pages/sobre.html"><i class='bx bxs-left-arrow button__left'></i></a>
+                <a href="/assets/pages/cursos.html"><i class='bx bxs-right-arrow button__right'></i></a>
+            </div>
+        </div>
+
         <div class="curriculum__center">
-            <div class="curriculum__background my-5">
-                <div class="curriculum__content p-4">
+            <div class="curriculum__background">
+                <div class="curriculum__content">
                     <h2 class="sobre-candidato text-center mt-5 fw-bold"> Suas experiências </h2>
                     <div class="experience__container">
-                        <form action="" class="row g-3 experience__content p-5">
+                        <form action="" class="row g-3 experience__content p-3">
                             <div class="col-md-6">
                                 <label for="cargo" class="form-label">Cargo</label>
                                 <input type="text" class="form-control" id="cargo">
@@ -88,14 +96,15 @@
                                 <input type="text" class="form-control" id="cargo">
                             </div>
                             <div class="form-group pt-3">
-                                <textarea class="form-control"
-                                id="sobreexperiência" 
-                                placeholder="Escreva sobre suas atividades e/ou conquistas neste emprego. " rows="3"></textarea>
+                                <textarea class="form-control" id="sobreexperiência"
+                                    placeholder="Escreva sobre suas atividades e/ou conquistas neste emprego. "
+                                    rows="3"></textarea>
                             </div>
                             <div class="my-3">
                                 <label for="formFile" class="form-label">Comprovante</label>
                                 <input class="form-control" type="file" id="formFile">
-                                <span style="font-size: .8rem; font-weight: 400;">*Contrato, carteira de trabalho...</span>
+                                <span style="font-size: .8rem; font-weight: 400;">*Contrato, carteira de
+                                    trabalho...</span>
 
                             </div>
                             <div class="send-button ">
@@ -104,99 +113,23 @@
                                 </button>
                                 <span class="send-span">Você poderá adicionar mais experiências ao enviar</span>
                             </div>
-
-                            
-                            <form action="" class="courses__form">   
-                            <div class="courses__container mt-5">
-                                <div class="courses__content">
-                                    <div class="row">
-                                        <h2 class="sobre-candidato text-center mt-5 fw-bold"> Seus cursos </h2>
-                                        <div class="col-lg-8 my-3">
-                                          <label for="courseName">Nome do Curso</label>
-                                          <input type="text" class="form-control" name="courseName" id="courseName" aria-label="First name">
-                                        </div>
-        
-                                        <div class="col-lg-4 my-3">
-                                            <label for="courseName">Data</label>
-                                            <input type="date" class="form-control" name="courseName" id="courseName" aria-label="First name">
-                                        </div>
-                                        <div class="col-lg-8 my-3">
-                                          <label for="courseLocal">Local</label>
-                                          <input type="text" class="form-control" name="courseLocal" id="courseLocal" aria-label="First name">
-                                        </div>
-        
-                                        <div class="col-lg-4 my-3">
-                                            <label for="courseDuration">Duração (Horas)</label>
-                                            <input type="number" class="form-control" name="courseDuration" id="courseDuration">
-                                        </div>
-                                        <div class="">
-                                            <label for="formFile" class="form-label">Certificado </label>
-                                            <input class="form-control" type="file" id="formFile">
-                                        </div>
-                                        <div class="send-button mt-5 ">
-                                            <button class="btn btn-primary w-100" type="submit">
-                                                Enviar
-                                            </button>
-                                            <span class="send-span">Você poderá adicionar mais cursos ao enviar</span>
-                                        </div>
-                                      </div>
-                                </div>
-                            </div>
-                            </form>                   
                         </form>
-                        
+
                     </div>
 
-                    
+
 
                     <!-- ========================================================== 
                         COMPETENCIAS
                     =============================================================== -->
-                    <div class="competences__container">
-                    <h3 class="fw-bold d-flex justify-content-center">Competências</h3>
-                            <div class="container justify-content-center"></div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-md-10 my-3">
-                                    <label for="" class="text-center d-flex justify-content-center">Excel </label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option value="1">basico</option>
-                                        <option value="2">intermediario</option>
-                                        <option value="3">CHUCK NORRIS</option>
-                                      </select>
-                                    </div>
-                                </div>
-
-                            <div class="container justify-content-center"></div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-md-10 my-3">
-                                    <label for="" class="text-center d-flex justify-content-center">Powerpoint </label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option value="1">basico</option>
-                                        <option value="2">intermediario</option>
-                                        <option value="3">CHUCK NORRIS</option>
-                                      </select>
-                                    </div>
-                                </div>
-                            <div class="container justify-content-center"></div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-md-10 my-3">
-                                    <label for="" class="text-center d-flex justify-content-center">Calculadora </label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option value="1">basico</option>
-                                        <option value="2">intermediario</option>
-                                        <option value="3">CHUCK NORRIS</option>
-                                      </select>
-                                    </div>
-                                </div>
-                            </div>
                     <!-- ========================================================== 
-                    =============================================================== -->    
-                </div>             
-            </div>     
+                    =============================================================== -->
+                </div>
+            </div>
         </div>
         <!--========================== CURRICULUM EXPERIENCE =================================-->
 
-        
+
         <!-- =========================== FOOTER ==================================== -->
         <footer id="footer">
             <div class="footer-top">
@@ -313,8 +246,8 @@
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
+    </div>
     <div class="copyright p-4">
         <div class="d-flex justify-content-between">
             Av. Presidente Vargas, 100 - Imbituba CEP 88780-000 - Santa Catarina | +55 (48) 3355-8900
@@ -326,11 +259,11 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
-        <script src="/assets/js/list.js"></script>
+    <script src="/assets/js/list.js"></script>
 
-        <script src="https://kit.fontawesome.com/74afc2d792.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/74afc2d792.js" crossorigin="anonymous"></script>
 
 </body>
 

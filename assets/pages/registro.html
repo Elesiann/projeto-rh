@@ -10,16 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Required meta tags-->
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="Colorlib Templates" />
-    <meta name="author" content="Colorlib" />
-    <meta name="keywords" content="Colorlib Templates" />
+
+    <!-- ========================== FAVICON ========================== -->
+    <link rel="icon" href="/assets/img/favicon.png" />
 
     <!-- ========================== BOOTSTRAP ========================== -->
     <link
@@ -68,7 +66,27 @@
             />
           </div>
           <h5 class="text-center mt-5">Para entrarmos em contato!</h5>
-          <div class="col-md-12">
+          <div class="col-md-9">
+            <label for="nome" class="form-label">Nome</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nome"
+              name="nome"
+              required
+            />
+          </div>
+          <div class="col-md-3">
+            <label for="datanascimento" class="form-label">Data de Nasc.</label>
+            <input
+              type="date"
+              class="form-control"
+              id="datanascimento"
+              name="datanascimento"
+              required
+            />
+          </div>
+          <div class="col-md-8">
             <label for="email" class="form-label">Email</label>
             <input
               type="email"
@@ -78,14 +96,36 @@
               required
             />
           </div>
-          <div class="col-md-10">
-            <label for="inputAddress" class="form-label">Logradouro</label>
+          <div class="col-md-4">
+            <label for="estadocivil" class="form-label">Estado Civil</label>
+            <select name="estadocivil" class="form-control" id="estadocivil">
+              <option value="0">Solteiro</option>
+              <option value="1">Casado</option>
+              <option value="2">Separado</option>
+              <option value="3">Divorciado</option>
+              <option value="4">Viúvo</option>
+              <option value="5">Amasiado</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="logradouro" class="form-label">Logradouro</label>
             <input
               type="text"
               class="form-control"
-              id="inputAddress"
+              id="logradouro"
               placeholder="Rua João Vitor"
               name="logradouro"
+              required
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="bairro" class="form-label">Bairro</label>
+            <input
+              type="text"
+              class="form-control"
+              id="bairro"
+              placeholder="Rua João Vitor"
+              name="bairro"
               required
             />
           </div>
@@ -142,8 +182,8 @@
             </select>
           </div>
           <div class="col-md-3">
-            <label for="inputCEP" class="form-label">CEP</label>
-            <input type="number" class="form-control" id="inputCEP" required />
+            <label for="cep" class="form-label">CEP</label>
+            <input type="number" class="form-control" id="cep" required />
           </div>
           <div class="col-md-6">
             <label for="telefone1" class="form-label">Telefone 1</label>
