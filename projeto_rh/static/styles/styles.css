@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap");
+:root {
+  --green-blue-crayola: #008dd0ff;
+  --green-ryb: #83b644ff;
+  --orange-peel: #f59e1cff;
+  --orange-peel-darker: rgb(211, 139, 31);
+  --vermilion: #e6341cff;
+  --pewter-blue: #3e6e7a;
+  --blue-sapphire: #145f7fff;
+  --white: #ffffffff;
+  --titanium: #f7f6f3;
+  /* ========================================== font ============================= */
+  --body-font: "Open Sans", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  /* FONT WEIGHT */
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 800;
+}
+
+/* =============================== CSS GLOBAL ==================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #f8edeb; */
+}
+
+h3 {
+  margin-top: 1rem;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+header img {
+  width: 100px;
+}
+
+label {
+  font-size: 1.25rem;
+  color: var(--titanium);
+  font-weight: 600;
+}
+
+textarea {
+  resize: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.wide-limit {
+  width: 100vw;
+  height: 80vh;
+}
+
+.pull-right {
+  margin-top: 1.5rem;
+}
+/* =============================== CSS GLOBAL ==================================== */
+
+/* =============================== NAV ==================================== */
+.nav-item {
+  margin-right: 5rem;
+  margin-left: 3rem;
+  font-size: 1.25rem;
+}
+
+#navbarNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item a {
+  color: var(--green-ryb) !important;
+}
+
+.nav-item a:hover {
+  color: var(--orange-peel) !important;
+  /* =============================== NAV ==================================== */
+}
+/* =============================== CAROUSEL ==================================== */
+
+.navbar {
+  background-color: transparent !important;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  width: 100vw;
+  height: 40vh;
+  overflow: hidden;
+}
+/* =============================== CAROUSEL ==================================== */
+
+/* =============================== CURRICULUM ==================================== */
+.curriculum__center {
+  display: flex;
+  justify-content: center;
+}
+
+.curriculum__background {
+  width: 60vw;
+  height: auto;
+}
+
+.experience__content {
+  width: 60vwpx;
+  height: auto;
+}
+
+.textarea-about {
+  height: 400px;
+}
+/* =============================== CURRICULUM ==================================== */
+
+.li__container {
+  margin-top: 1rem;
+}
+
+.li__container ul {
+  list-style: none;
+}
+
+.send-span {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* =============================== BUTTON ==================================== */
+.btn-primary {
+  background-color: var(--orange-peel);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--orange-peel-darker);
+  border: none;
+}
+
+.navigation__buttons a {
+  font-size: 3rem;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.button__left,
+.button__right {
+  color: white;
+}
+
+.button__left:hover {
+  color: var(--vermilion);
+}
+
+.button__right:hover {
+  color: var(--green-ryb);
+}
+/* =============================== BUTTON ==================================== */
+
+/* =============================== PANEL ==================================== */
+
+.panel {
+  background: rgb(20, 31, 65);
+  background: linear-gradient(
+    0deg,
+    rgb(20, 31, 65) 10%,
+    rgba(106, 168, 184, 1) 80%
+  );
+  color: var(--titanium);
+}
+
+.panel-title {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.panel-footer {
+  margin-bottom: 2rem;
+}
+
+.panel-heading {
+  margin-top: 1rem;
+}
+
+/* ================================= FOOTER ====================================== */
+#footer {
+  border-top: 2px solid var(--titanium);
+  padding: 0 0 2rem 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-info h3 {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 1.5rem;
+  display: inline-block;
+  background: var(--orange-peel);
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+  background: var(--green-ryb);
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 1.5rem;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #ec7f6d;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+  text-decoration: none;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: var(--orange-peel);
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact p {
+  line-height: 26px;
+}
+
+.copyright {
+  background-color: var(--orange-peel);
+  width: 100%;
+}
+
+#footer .credits {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  .curriculum__background {
+    width: 80vw;
+  }
+}
