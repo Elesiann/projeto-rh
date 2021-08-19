@@ -1,7 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/assets/styles/register.css" />
+    <link rel="stylesheet" href="{% static 'styles/register.css'%}" />
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +18,7 @@
     />
 
     <!-- ========================== FAVICON ========================== -->
-    <link rel="icon" href="/assets/img/favicon.png" />
+    <link rel="icon" href="{% static 'img/favicon.png'%}" />
 
     <!-- ========================== BOOTSTRAP ========================== -->
     <link
@@ -36,7 +37,7 @@
     />
 
     <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all" />
+    <link href="{% static 'css/main.css'%}" rel="stylesheet" media="all" />
   </head>
 
   <body>
@@ -215,7 +216,7 @@
             Já possui um cadastro?
             <a
               class="text-decoration-none color-label"
-              href="/assets/pages/login.html"
+              href="{% static 'pages/login.html'%}"
               ><strong>Faça login!</strong></a
             >
           </p>
@@ -224,13 +225,13 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
     <!-- Vendor JS-->
-    <script src="vendor/select2/select2.min.js"></script>
-    <script src="vendor/datepicker/moment.min.js"></script>
-    <script src="vendor/datepicker/daterangepicker.js"></script>
+    <script src="{% static 'vendor/select2/select2.min.js'%}"></script>
+    <script src="{% static 'vendor/datepicker/moment.min.js'%}"></script>
+    <script src="{% static 'vendor/datepicker/daterangepicker.js'%}"></script>
 
     <!-- Main JS-->
-    <script src="js/global.js"></script>
+    <script src="{% static 'js/global.js'%}"></script>
   </body>
 </html>
