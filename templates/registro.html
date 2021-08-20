@@ -44,29 +44,8 @@
     <div class="form-center">
       <div class="form-width">
         <form class="row g-3">
-          <h2 class="text-center mb-3 fw-bold">Faça seu cadastro!</h2>
-          <h5 class="text-center">Para fazer login no site</h5>
-          <div class="col-md-6">
-            <label for="CPF" class="form-label">CPF</label>
-            <input
-              type="text"
-              class="form-control"
-              id="cpf"
-              name="cpf"
-              required
-            />
-          </div>
-          <div class="col-md-6">
-            <label for="password" class="form-label">Senha</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              name="password"
-              required
-            />
-          </div>
-          <h5 class="text-center mt-5">Para entrarmos em contato!</h5>
+          <h2 class="text-center mb-3 fw-bold">Faça seu cadastro</h2>
+          <h5 class="text-center mt-1">Para entrarmos em contato</h5>
           <div class="col-md-9">
             <label for="nome" class="form-label">Nome</label>
             <input
@@ -74,7 +53,6 @@
               class="form-control"
               id="nome"
               name="nome"
-              required
             />
           </div>
           <div class="col-md-3">
@@ -84,7 +62,6 @@
               class="form-control"
               id="datanascimento"
               name="datanascimento"
-              required
             />
           </div>
           <div class="col-md-8">
@@ -94,7 +71,6 @@
               class="form-control"
               id="email"
               name="email"
-              required
             />
           </div>
           <div class="col-md-4">
@@ -116,7 +92,6 @@
               id="logradouro"
               placeholder="Rua João Vitor"
               name="logradouro"
-              required
             />
           </div>
           <div class="col-md-4">
@@ -127,7 +102,6 @@
               id="bairro"
               placeholder="Rua João Vitor"
               name="bairro"
-              required
             />
           </div>
           <div class="col-md-2">
@@ -146,12 +120,11 @@
               class="form-control"
               id="cidade"
               name="cidade"
-              required
             />
           </div>
           <div class="col-md-4">
             <label for="estado" class="form-label">Estado</label>
-            <select id="estado" class="form-select" name="estado" required>
+            <select id="estado" class="form-select" name="estado" >
               <option value="" disabled selected>Selecione</option>
               <option name="AC">Acre</option>
               <option name="AL">Alagoas</option>
@@ -184,7 +157,7 @@
           </div>
           <div class="col-md-3">
             <label for="cep" class="form-label">CEP</label>
-            <input type="number" class="form-control" id="cep" required />
+            <input type="number" class="form-control" id="cep" />
           </div>
           <div class="col-md-6">
             <label for="telefone1" class="form-label">Telefone 1</label>
@@ -193,7 +166,6 @@
               class="form-control"
               id="telefone1"
               placeholder="DDD + Somente números"
-              required
             />
           </div>
           <div class="col-md-6">
@@ -206,19 +178,17 @@
             />
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary col-12">
-              Inscrever-se
-            </button>
-          </div>
+            <a href="{% url 'login' %}" class="btn btn-primary col-12">
+                Inscrever-se
+            </a>
+        </div>>
         </form>
         <div class="login-redirect text-center mt-2">
           <p>
             Já possui um cadastro?
-            <a
-              class="text-decoration-none color-label"
-              href="{% url 'index' %}"
-              ><strong>Faça login!</strong></a
-            >
+            <a href="{% url 'login' %}" class="text-decoration-none color-label"
+              ><strong>Faça login!</strong>
+            </a>
           </p>
         </div>
       </div>
