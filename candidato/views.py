@@ -1,12 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 
 def login(request):
-    return render(request, 'index.html')
+    if request.method == 'POST':
+        cpf = request.POST['cpf']
+        senha = request.POST['password']
+        return redirect('experiencias')
+    else:
+        return render(request, 'index.html')
 
 
 def registro(request):
-    return render(request, 'registro.html')
+    if request.method == 'POST':
+        nome = request.POST['nome']
+        print(nome)
+        return redirect('login')
+    else:
+        return render(request, 'registro.html')
 
 
 def experiencias(request):
