@@ -21,6 +21,7 @@ Quando executamos o makemigrations, o Django cria o banco de dados e as migratio
 
 ## Colaboradores:
 ### Bruno Disliler (Back-End) - [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/brunodisliler/)](https://www.linkedin.com/in/brunodisliler/) [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/BrunoDisliler)](https://github.com/BrunoDisliler)
-### Giovani Correa (Front-End) - [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://https://github.com/Elesiann)](https://github.com/Elesiann)
+### Giovani Correa (Front-End) - [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/giovanimachado/)](https://www.linkedin.com/in/giovanimachado/) [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://https://github.com/Elesiann)](https://github.com/Elesiann)
+
 
 
