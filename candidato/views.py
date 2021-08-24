@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
-from django.contrib import auth
+from django.contrib import auth, messages
 
 
 def login(request):
@@ -8,7 +8,7 @@ def login(request):
         email = request.POST['email']
         senha = request.POST['password']
         if email == '' or senha == '':
-            print('Os campos email e senha nao podem ficar em branco')
+            messages.error(request, 'Os campos email e senha nao podem ficar em branco')
             return redirect('login')
         print(email, senha)
         if User.objects.filter(email=email).exists():
@@ -16,8 +16,8 @@ def login(request):
             user = auth.authenticate(request, username=nome, password=senha)
             if user is not None:
                 auth.login(request, user)
-                print('Login realizado com sucesso')
-                return redirect('esperiencias')
+                messages.success(request, 'Login realizado com sucesso')
+                return redirect('sobre')
     return render(request, 'index.html')
 
 
@@ -38,31 +38,33 @@ def registro(request):
         senha = request.POST['password']
         senha_2 = request.POST['password2']
         if not nome.strip():
-            print('O campo nome não pode ficar em branco')
+            messages.error(request, 'O campo nome não pode ficar em branco')
             return redirect('registro')
         if not email.strip():
-            print('O campo email não pode ficar em branco')
+            messages.error(request, 'O campo email não pode ficar em branco')
             return redirect('registro')
         if senha != senha_2:
-            print('as senhas não conferem')
+            messages.error(request, 'As senhas não são iguais!')
             return redirect('registro')
         if User.objects.filter(email=email).exists():
-            print('usuário já cadastrado')
+            messages.error(request, 'Usuário já cadastrado!')
+            return redirect('registro')
+        if User.objects.filter(username=nome).exists():
+            messages.error(request, 'Usuário já cadastrado!')
             return redirect('registro')
         user = User.objects.create_user(username=nome, email=email, password=senha)
         user.save()
-        print('usuaário cadastrado com sucesso')
+        messages.success(request, 'Cadastro realizado com sucesso!')
         return redirect('login')
     return render(request, 'registro.html')
             
-
-
 
 def experiencias(request):
     if request.user.is_authenticated:
         return render(request, 'experiencias.html')
     else:
         return redirect('login')
+
 
 def cursos(request):
     if request.user.is_authenticated:
@@ -76,3 +78,7 @@ def sobre(request):
            return render(request, 'sobre.html')
     else:
         return redirect('login')
+
+
+
+    return not campo.strip
