@@ -1,207 +1,161 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="{% static 'styles/register.css'%}" />
 
-    <!-- GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<head>
+  <link rel="stylesheet" href="{% static 'styles/register.css'%}" />
 
-    <!-- ========================== FAVICON ========================== -->
-    <link rel="icon" href="{% static 'img/favicon.png'%}" />
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- ========================== BOOTSTRAP ========================== -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
+  <!-- ========================== FAVICON ========================== -->
+  <link rel="icon" href="{% static 'img/favicon.png'%}" />
 
-    <!-- Title Page-->
-    <title>Porto de Imbituba | RH</title>
-    <!-- Font -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
-      rel="stylesheet"
-    />
+  <!-- ========================== BOOTSTRAP ========================== -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
-    <!-- Main CSS-->
-    <link href="{% static 'css/main.css'%}" rel="stylesheet" media="all" />
-  </head>
+  <!-- Title Page-->
+  <title>Porto de Imbituba | RH</title>
+  <!-- Font -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
 
-  <body>
-    <div class="form-center">
-      <div class="form-width">
-        <form class="row g-3">
-          <h2 class="text-center mb-3 fw-bold">Faça seu cadastro</h2>
-          <h5 class="text-center mt-1">Para entrarmos em contato</h5>
-          <div class="col-md-9">
-            <label for="nome" class="form-label">Nome</label>
-            <input
-              type="text"
-              class="form-control"
-              id="nome"
-              name="nome"
-            />
-          </div>
-          <div class="col-md-3">
-            <label for="datanascimento" class="form-label">Data de Nasc.</label>
-            <input
-              type="date"
-              class="form-control"
-              id="datanascimento"
-              name="datanascimento"
-            />
-          </div>
-          <div class="col-md-8">
-            <label for="email" class="form-label">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-            />
-          </div>
-          <div class="col-md-4">
-            <label for="estadocivil" class="form-label">Estado Civil</label>
-            <select name="estadocivil" class="form-control" id="estadocivil">
-              <option value="0">Solteiro</option>
-              <option value="1">Casado</option>
-              <option value="2">Separado</option>
-              <option value="3">Divorciado</option>
-              <option value="4">Viúvo</option>
-              <option value="5">Amasiado</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label for="logradouro" class="form-label">Logradouro</label>
-            <input
-              type="text"
-              class="form-control"
-              id="logradouro"
-              placeholder="Rua João Vitor"
-              name="logradouro"
-            />
-          </div>
-          <div class="col-md-4">
-            <label for="bairro" class="form-label">Bairro</label>
-            <input
-              type="text"
-              class="form-control"
-              id="bairro"
-              placeholder="Rua João Vitor"
-              name="bairro"
-            />
-          </div>
-          <div class="col-md-2">
-            <label for="numerocasa" class="form-label">Número</label>
-            <input
-              type="number"
-              class="form-control"
-              id="numerocasa"
-              name="numerocasa"
-            />
-          </div>
-          <div class="col-md-5">
-            <label for="cidade" class="form-label">Cidade</label>
-            <input
-              type="text"
-              class="form-control"
-              id="cidade"
-              name="cidade"
-            />
-          </div>
-          <div class="col-md-4">
-            <label for="estado" class="form-label">Estado</label>
-            <select id="estado" class="form-select" name="estado" >
-              <option value="" disabled selected>Selecione</option>
-              <option name="AC">Acre</option>
-              <option name="AL">Alagoas</option>
-              <option name="AP">Amapá</option>
-              <option name="AM">Amazonas</option>
-              <option name="BA">Bahia</option>
-              <option name="CE">Ceará</option>
-              <option name="DF">Distrito Federal</option>
-              <option name="ES">Espirito Santo</option>
-              <option name="GO">Goiás</option>
-              <option name="MA">Maranhão</option>
-              <option name="MS">Mato Grosso do Sul</option>
-              <option name="MT">Mato Grosso</option>
-              <option name="MG">Minas Gerais</option>
-              <option name="PA">Pará</option>
-              <option name="PB">Paraíba</option>
-              <option name="PR">Paraná</option>
-              <option name="PE">Pernambuco</option>
-              <option name="PI">Piauí</option>
-              <option name="RJ">Rio de Janeiro</option>
-              <option name="RN">Rio Grande do Norte</option>
-              <option name="RS">Rio Grande do Sul</option>
-              <option name="RO">Rondônia</option>
-              <option name="RR">Roraima</option>
-              <option name="SC">Santa Catarina</option>
-              <option name="SP">São Paulo</option>
-              <option name="SE">Sergipe</option>
-              <option name="TO">Tocantins</option>
-            </select>
-          </div>
-          <div class="col-md-3">
-            <label for="cep" class="form-label">CEP</label>
-            <input type="number" class="form-control" id="cep" />
-          </div>
-          <div class="col-md-6">
-            <label for="telefone1" class="form-label">Telefone 1</label>
-            <input
-              type="number"
-              class="form-control"
-              id="telefone1"
-              placeholder="DDD + Somente números"
-            />
-          </div>
-          <div class="col-md-6">
-            <label for="telefone2" class="form-label">Telefone 2</label>
-            <input
-              type="number"
-              class="form-control"
-              id="telefone2"
-              placeholder="Opcional"
-            />
-          </div>
-          <div class="col-12">
-            <a href="{% url 'login' %}" class="btn btn-primary col-12">
-                Inscrever-se
-            </a>
-        </div>>
-        </form>
-        <div class="login-redirect text-center mt-2">
-          <p>
-            Já possui um cadastro?
-            <a href="{% url 'login' %}" class="text-decoration-none color-label"
-              ><strong>Faça login!</strong>
-            </a>
-          </p>
+  <!-- Main CSS-->
+  <link href="{% static 'css/main.css'%}" rel="stylesheet" media="all" />
+</head>
+
+<body>
+  <div class="form-center">
+    <div class="form-width">
+      <form action="{% url 'registro' %}" method="POST" class="row g-3">
+        {% csrf_token %}
+        <h2 class="text-center mb-3 fw-bold">Faça seu cadastro</h2>
+        <h5 class="text-center mt-1">Para entrarmos em contato</h5>
+        <div class="col-md-9">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nome" name="nome"/>
         </div>
+        <div class="col-md-3">
+          <label for="datanascimento" class="form-label">Data de Nasc.</label>
+          <input type="date" class="form-control" id="datanascimento" name="datanascimento" />
+        </div>
+        <div class="col-md-8">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" />
+        </div>
+        <div class="col-md-4">
+          <label for="estadocivil" class="form-label">Estado Civil</label>
+          <select name="estadocivil" class="form-control" id="estadocivil" name="estadocivil">
+            <option value="0">Solteiro</option>
+            <option value="1">Casado</option>
+            <option value="2">Separado</option>
+            <option value="3">Divorciado</option>
+            <option value="4">Viúvo</option>
+            <option value="5">Amasiado</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="logradouro" class="form-label">Logradouro</label>
+          <input type="text" class="form-control" id="logradouro" placeholder="Rua João Vitor" name="logradouro" />
+        </div>
+        <div class="col-md-4">
+          <label for="bairro" class="form-label">Bairro</label>
+          <input type="text" class="form-control" id="bairro" placeholder="Rua João Vitor" name="bairro" />
+        </div>
+        <div class="col-md-2">
+          <label for="numerocasa" class="form-label">Número</label>
+          <input type="number" class="form-control" id="numerocasa" name="numerocasa" />
+        </div>
+        <div class="col-md-5">
+          <label for="cidade" class="form-label">Cidade</label>
+          <input type="text" class="form-control" id="cidade" name="cidade" />
+        </div>
+        <div class="col-md-4">
+          <label for="estado" class="form-label">Estado</label>
+          <select id="estado" class="form-select" name="estado">
+            <option value="" disabled selected>Selecione</option>
+            <option name="AC">Acre</option>
+            <option name="AL">Alagoas</option>
+            <option name="AP">Amapá</option>
+            <option name="AM">Amazonas</option>
+            <option name="BA">Bahia</option>
+            <option name="CE">Ceará</option>
+            <option name="DF">Distrito Federal</option>
+            <option name="ES">Espirito Santo</option>
+            <option name="GO">Goiás</option>
+            <option name="MA">Maranhão</option>
+            <option name="MS">Mato Grosso do Sul</option>
+            <option name="MT">Mato Grosso</option>
+            <option name="MG">Minas Gerais</option>
+            <option name="PA">Pará</option>
+            <option name="PB">Paraíba</option>
+            <option name="PR">Paraná</option>
+            <option name="PE">Pernambuco</option>
+            <option name="PI">Piauí</option>
+            <option name="RJ">Rio de Janeiro</option>
+            <option name="RN">Rio Grande do Norte</option>
+            <option name="RS">Rio Grande do Sul</option>
+            <option name="RO">Rondônia</option>
+            <option name="RR">Roraima</option>
+            <option name="SC">Santa Catarina</option>
+            <option name="SP">São Paulo</option>
+            <option name="SE">Sergipe</option>
+            <option name="TO">Tocantins</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="cep" class="form-label">CEP</label>
+          <input type="number" class="form-control" id="cep" name="cep"/>
+        </div>
+        <div class="col-md-6">
+          <label for="telefone1" class="form-label">Telefone 1</label>
+          <input type="number" class="form-control" id="telefone1" name="telefone1" placeholder="DDD + Somente números" />
+        </div>
+        <div class="col-md-6">
+          <label for="telefone2" class="form-label">Telefone 2</label>
+          <input type="number" class="form-control" id="telefone2" name="telefone2" placeholder="Opcional" />
+        </div>
+        <div class="col-md-6">
+          <label for="password" class="form-label">Senha</label>
+          <input type="text" class="form-control" id="password" name="password" placeholder="Digite sua senha" required/>
+        </div>
+        <div class="col-md-6">
+          <label for="password2" class="form-label">Repita a senha</label>
+          <input type="text" class="form-control" id="password2" name="password2" placeholder="Digite novamente sua senha" required/>
+        </div>
+        {% include 'partials/_alertas.html' %}
+        <div class="col-12">
+          <button class="btn btn-primary w-100" type="submit">
+              Inscrever-se
+            </button>
+
+        </div>
+      </form>
+      <div class="login-redirect text-center mt-2">
+        <p>
+          Já possui um cadastro?
+          <a href="{% url 'login' %}" class="text-decoration-none color-label"><strong>Faça login!</strong>
+          </a>
+        </p>
       </div>
     </div>
+  </div>
 
-    <!-- Jquery JS-->
-    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
-    <!-- Vendor JS-->
-    <script src="{% static 'vendor/select2/select2.min.js'%}"></script>
-    <script src="{% static 'vendor/datepicker/moment.min.js'%}"></script>
-    <script src="{% static 'vendor/datepicker/daterangepicker.js'%}"></script>
+  <!-- Jquery JS-->
+  <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+  <!-- Vendor JS-->
+  <script src="{% static 'vendor/select2/select2.min.js'%}"></script>
+  <script src="{% static 'vendor/datepicker/moment.min.js'%}"></script>
+  <script src="{% static 'vendor/datepicker/daterangepicker.js'%}"></script>
 
-    <!-- Main JS-->
-    <script src="{% static 'js/global.js'%}"></script>
-  </body>
+  <!-- Main JS-->
+  <script src="{% static 'js/global.js'%}"></script>
+</body>
+
 </html>
