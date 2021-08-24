@@ -39,7 +39,7 @@
         <h5 class="text-center mt-1">Para entrarmos em contato</h5>
         <div class="col-md-9">
           <label for="nome" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="nome" name="nome" />
+          <input type="text" class="form-control" id="nome" name="nome" required/>
         </div>
         <div class="col-md-3">
           <label for="datanascimento" class="form-label">Data de Nasc.</label>
@@ -51,7 +51,7 @@
         </div>
         <div class="col-md-4">
           <label for="estadocivil" class="form-label">Estado Civil</label>
-          <select name="estadocivil" class="form-control" id="estadocivil">
+          <select name="estadocivil" class="form-control" id="estadocivil" name="estadocivil">
             <option value="0">Solteiro</option>
             <option value="1">Casado</option>
             <option value="2">Separado</option>
@@ -111,15 +111,23 @@
         </div>
         <div class="col-md-3">
           <label for="cep" class="form-label">CEP</label>
-          <input type="number" class="form-control" id="cep" />
+          <input type="number" class="form-control" id="cep" name="cep"/>
         </div>
         <div class="col-md-6">
           <label for="telefone1" class="form-label">Telefone 1</label>
-          <input type="number" class="form-control" id="telefone1" placeholder="DDD + Somente números" />
+          <input type="number" class="form-control" id="telefone1" name="telefone1" placeholder="DDD + Somente números" />
         </div>
         <div class="col-md-6">
           <label for="telefone2" class="form-label">Telefone 2</label>
-          <input type="number" class="form-control" id="telefone2" placeholder="Opcional" />
+          <input type="number" class="form-control" id="telefone2" name="telefone2" placeholder="Opcional" />
+        </div>
+        <div class="col-md-6">
+          <label for="password" class="form-label">Senha</label>
+          <input type="text" class="form-control" id="password" name="password" placeholder="Digite sua senha" required/>
+        </div>
+        <div class="col-md-6">
+          <label for="password2" class="form-label">Repita a senha</label>
+          <input type="text" class="form-control" id="password2" name="password2" placeholder="Digite novamente sua senha" required/>
         </div>
         <div class="col-12">
           <button class="btn btn-primary w-100" type="submit">
