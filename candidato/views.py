@@ -16,7 +16,6 @@ def login(request):
             user = auth.authenticate(request, username=nome, password=senha)
             if user is not None:
                 auth.login(request, user)
-                messages.success(request, 'Login realizado com sucesso')
                 return redirect('sobre')
     return render(request, 'index.html')
 
@@ -73,12 +72,14 @@ def cursos(request):
         return redirect('login')
 
 
+def logout(request):
+    auth.logout(request)
+    messages.success(request, 'Logout realizado com sucesso')
+    return redirect('login')
+
+
 def sobre(request):
     if request.user.is_authenticated:
            return render(request, 'sobre.html')
     else:
         return redirect('login')
-
-
-
-    return not campo.strip

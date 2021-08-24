@@ -107,6 +107,7 @@ textarea {
 
 /* =============================== CURRICULUM ==================================== */
 .curriculum__center {
+  background-color: red;
   display: flex;
   justify-content: center;
 }
