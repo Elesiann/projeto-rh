@@ -66,7 +66,7 @@ def experiencias(request):
         local = request.POST['local']
         conquistas = request.POST['sobreexperiencia']
         comprovante = request.POST['comprovante']
-        return redirect('cursos')
+        return redirect('experiencias')
         #experiencias = Sobre.objects.create(sobrecandidato=sobrecandidato)
         #experiencias.save()
     if request.user.is_authenticated:
