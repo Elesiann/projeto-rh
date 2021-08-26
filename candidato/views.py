@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-
+""" from candidato.models import Sobre """
 
 def login(request):
     if request.method == 'POST':
@@ -59,6 +59,16 @@ def registro(request):
             
 
 def experiencias(request):
+    if request.method == 'POST':
+        cargo = request.POST['cargo']
+        inicio = request.POST['inicio']
+        fim = request.POST['fim']
+        local = request.POST['local']
+        conquistas = request.POST['sobreexperiencia']
+        comprovante = request.POST['comprovante']
+        return redirect('cursos')
+        #experiencias = Sobre.objects.create(sobrecandidato=sobrecandidato)
+        #experiencias.save()
     if request.user.is_authenticated:
         return render(request, 'experiencias.html')
     else:
@@ -66,6 +76,18 @@ def experiencias(request):
 
 
 def cursos(request):
+    if request.method == 'POST':
+        nome_curso = request.POST['NomeCurso']
+        data = request.POST['DataCurso']
+        local = request.POST['LocalCurso']
+        duracao = request.POST['DuracaoCurso']
+        certificado = request.POST['Certificado']
+        office = request.POST['office']
+        ingles = request.POST['ingles']
+        informatica = request.POST['informatica']
+        return redirect('cursos')  
+        #experiencias = Sobre.objects.create(sobrecandidato=sobrecandidato)
+        #experiencias.save()
     if request.user.is_authenticated:
          return render(request, 'cursos.html')
     else:
@@ -79,7 +101,15 @@ def logout(request):
 
 
 def sobre(request):
+    if request.method == 'POST':
+        sobrecandidato = request.POST['sobrecandidato']
+        if sobrecandidato == '':
+            messages.error(request, 'Não deixe essa parte em branco.')
+            return redirect('sobre')
+        #sobre = Sobre.objects.create(sobrecandidato=sobrecandidato)
+        #sobre.save()
+        return redirect('experiencias')
     if request.user.is_authenticated:
-           return render(request, 'sobre.html')
+        return render(request, 'sobre.html')
     else:
         return redirect('login')

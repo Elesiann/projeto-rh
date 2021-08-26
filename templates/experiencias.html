@@ -55,31 +55,33 @@
                 <div class="curriculum__content">
                     <h2 class="sobre-candidato text-center mt-5 fw-bold"> Suas experiências </h2>
                     <div class="experience__container">
-                        <form action="" class="row g-3 experience__content p-3">
+                        <form action="{% url 'experiencias' %}" method="POST" class="row g-3 experience__content p-3">
+                            {% csrf_token %}
                             <div class="col-md-6">
                                 <label for="cargo" class="form-label">Cargo</label>
-                                <input type="text" class="form-control" id="cargo">
+                                <input type="text" class="form-control" id="cargo" name="cargo">
                             </div>
                             <div class="col-md-3">
-                                <label for="cargo" class="form-label">Início</label>
-                                <input type="date" class="form-control" id="cargo">
+                                <label for="inicio" class="form-label">Início</label>
+                                <input type="date" class="form-control" id="inicio" name="inicio">
                             </div>
                             <div class="col-md-3">
-                                <label for="cargo" class="form-label">Fim</label>
-                                <input type="date" class="form-control" id="cargo">
+                                <label for="fim" class="form-label">Fim</label>
+                                <input type="date" class="form-control" id="fim" name="fim">
                             </div>
                             <div class="col-md-12">
-                                <label for="cargo" class="form-label">Local</label>
-                                <input type="text" class="form-control" id="cargo">
+                                <label for="local" class="form-label">Local</label>
+                                <input type="text" class="form-control" id="local" name="local">
                             </div>
                             <div class="form-group pt-3">
-                                <textarea class="form-control" id="sobreexperiência"
+                                <label for="sobreexperiência" class="form-label">Atividades ou Conquistas</label>
+                                <textarea class="form-control" id="sobreexperiência" name="sobreexperiencia"
                                     placeholder="Escreva sobre suas atividades e/ou conquistas neste emprego. "
                                     rows="3"></textarea>
                             </div>
                             <div class="my-3">
-                                <label for="formFile" class="form-label">Comprovante</label>
-                                <input class="form-control" type="file" id="formFile">
+                                <label for="comprovante" class="form-label">Comprovante</label>
+                                <input class="form-control" type="file" id="comprovante" name="comprovante">
                                 <span style="font-size: .8rem; font-weight: 400;">*Contrato, carteira de
                                     trabalho...</span>
 
