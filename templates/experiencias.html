@@ -82,9 +82,7 @@
                             <div class="my-3">
                                 <label for="comprovante" class="form-label">Comprovante</label>
                                 <input class="form-control" type="file" id="comprovante" name="comprovante">
-                                <span style="font-size: .8rem; font-weight: 400;">*Contrato, carteira de
-                                    trabalho...</span>
-
+                                <span style="font-size: .8rem; font-weight: 400;">*Contrato, carteira de trabalho...</span>
                             </div>
                             <div class="send-button ">
                                 <button class="btn btn-primary w-100" type="submit">
@@ -93,11 +91,16 @@
                                 <span class="send-span">Você poderá adicionar mais experiências ao enviar</span>
                             </div>
                         </form>
-
+                            <form action="{% url 'botao_proximo' %}" method="POST">
+                                {% csrf_token %}
+                            <div class="send-button ">
+                                <button class="btn btn-success w-100" type="submit">
+                                    Próximo
+                                </button>
+                                    <span class="send-span">Clicando em próximo, você será redirecionado para a página de cursos</span>
+                            </form>
+                            </div>                       
                     </div>
-
-
-
                     <!-- ========================================================== 
                         COMPETENCIAS
                     =============================================================== -->
@@ -107,8 +110,6 @@
             </div>
         </div>
         <!--========================== CURRICULUM EXPERIENCE =================================-->
-
-
         <!-- =========================== FOOTER ==================================== -->
         <footer id="footer">
             <div class="footer-top">

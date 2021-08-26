@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
+from django.contrib.auth import authenticate
 """ from candidato.models import Sobre """
 
 def login(request):
@@ -8,15 +9,18 @@ def login(request):
         email = request.POST['email']
         senha = request.POST['password']
         if email == '' or senha == '':
-            messages.error(request, 'Os campos email e senha nao podem ficar em branco')
+            messages.error(request, 'Os campos email e senha não podem ficar em branco')
             return redirect('login')
-        print(email, senha)
         if User.objects.filter(email=email).exists():
             nome = User.objects.filter(email=email).values_list('username', flat=True).get()
             user = auth.authenticate(request, username=nome, password=senha)
             if user is not None:
                 auth.login(request, user)
                 return redirect('sobre')
+            else:
+                messages.error(request, 'As senhas não conferem! Digite novamente.')
+                return redirect('login')
+
     return render(request, 'index.html')
 
 
@@ -113,3 +117,14 @@ def sobre(request):
         return render(request, 'sobre.html')
     else:
         return redirect('login')
+
+
+def botao_proximo(request):
+    if request.method == 'POST':
+        return redirect('cursos')
+
+
+def botao_finalizar(request):
+    if request.method == 'POST':
+        return redirect('cursos')
+
