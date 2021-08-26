@@ -1,7 +1,6 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-from django.contrib.auth import authenticate
 """ from candidato.models import Sobre """
 
 def login(request):
@@ -20,6 +19,9 @@ def login(request):
             else:
                 messages.error(request, 'As senhas não conferem! Digite novamente.')
                 return redirect('login')
+        else:
+            messages.error(request, 'Você não está registrado. Por favor, clique em Cadastre-se.')
+            return redirect('login')
 
     return render(request, 'index.html')
 
