@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-""" from candidato.models import Sobre """
+from candidato.models import Sobre, Experiencias, Cursos
 
 def login(request):
     if request.method == 'POST':
@@ -130,3 +130,6 @@ def botao_finalizar(request):
     if request.method == 'POST':
         return redirect('cursos')
 
+
+def administrador(request):
+    return render(request, 'administrador.html')

@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 
 
 class Registro(models.Model):
-    nome = models.ForeignKey(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    nome = models.CharField(max_length=50)
     data_nascimento = models.DateField(auto_now=False, auto_now_add=False)
     email = models.EmailField(max_length=100)
     estado_civil = models.CharField(max_length=50)
@@ -17,11 +18,25 @@ class Registro(models.Model):
     tel_2 = models.IntegerField(blank=True)
 
 
-class Sobre(Registro):
-    sobrecandidato = models.TextField(blank=False)
+class Sobre(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    sobrecandidato = models.TextField(verbose_name='sobreCandidato')
     
-    def __str__(self):
-        return self.sobrecandidato
-  
-    
-    
+
+class Experiencias(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    cargo = models.CharField(max_length=50)
+    inicio = models.DateField(null=True)
+    fim = models.DateField(null=True)
+    local = models.CharField(max_length=50)
+    atividades = models.TextField(null=True, verbose_name='atividadesOuConquistas')
+    comprovante = models.FileField(null=True)
+
+
+class Cursos(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    nome_curso = models.CharField(max_length=50)
+    data = models.DateField(null=True)
+    local_curso = models.CharField(max_length=50)
+    duracao_horas = models.IntegerField()
+    certificado = models.FileField(null=True)
