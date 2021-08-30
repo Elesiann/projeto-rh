@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-from .models import Profile
+from .models import Usuario
 
 def login(request):
     if request.method == 'POST':
@@ -24,10 +24,12 @@ def login(request):
             return redirect('login')
 
     return render(request, 'index.html')
-
-
-def profile(request):
+        
+       
+def cadastro(request):
     if request.method == 'POST':
+        nome = request.POST['nome']
+        email = request.POST['email']
         data_nascimento = request.POST['datanascimento']
         estado_civil = request.POST['estadocivil']
         logradouro = request.POST['logradouro']
@@ -38,26 +40,6 @@ def profile(request):
         cep = request.POST['cep']
         tel_1 = request.POST['telefone1']
         tel_2 = request.POST['telefone2']
-        perfil = Profile.objects.create(
-            user=cadastro.pk,
-            datanascimento=data_nascimento,
-            estadocivil=estado_civil,
-            logradouro=logradouro,
-            bairro=bairro,
-            numerocasa=numero,
-            cidade=cidade,
-            estado=estado,
-            cep=cep,
-            telefone1=tel_1,
-            telefone2=tel_2,
-            )
-        perfil.save()
-        
-        
-def cadastro(request):
-    if request.method == 'POST':
-        nome = request.POST['nome']
-        email = request.POST['email']
         senha = request.POST['password']
         senha_2 = request.POST['password2']
         if not nome.strip():
@@ -69,14 +51,31 @@ def cadastro(request):
         if senha != senha_2:
             messages.error(request, 'As senhas não são iguais!')
             return redirect('cadastro')
-        if User.objects.filter(email=email).exists():
+        if Usuario.objects.filter(email=email).exists():
             messages.error(request, 'Usuário já cadastrado!')
             return redirect('cadastro')
-        if User.objects.filter(username=nome).exists():
+        if Usuario.objects.filter(nome=nome).exists():
             messages.error(request, 'Usuário já cadastrado!')
             return redirect('cadastro')
-        user = User.objects.create_user(username=nome, email=email, password=senha)
+                            
+        user = Usuario.objects.create(
+            nome=nome, 
+            data_nascimento=data_nascimento,
+            email=email,          
+            estado_civil=estado_civil,
+            logradouro=logradouro,
+            bairro=bairro,
+            numero=numero,
+            cidade=cidade,
+            estado=estado,
+            cep=cep,
+            tel_1=tel_1,
+            tel_2=tel_2,
+            senha=senha,
+            senha_2=senha_2,
+        )
         user.save()
+
         messages.success(request, 'Cadastro realizado com sucesso!')
         return redirect('login')
     return render(request, 'cadastro.html')

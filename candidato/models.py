@@ -1,9 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
-class Profile(models.Model):
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+class Usuario(models.Model):
+    nome = models.CharField(max_length=50)
+    email = models.EmailField()
     data_nascimento = models.DateField(auto_now=False, auto_now_add=False)
     estado_civil = models.CharField(max_length=50)
     logradouro = models.CharField(max_length=200)
@@ -12,8 +12,10 @@ class Profile(models.Model):
     cidade = models.CharField(max_length=50)
     estado = models.CharField(max_length=50)
     cep = models.IntegerField(null=True)
-    tel_1 = models.BigIntegerField(null=True)
-    tel_2 = models.BigIntegerField(blank=True)
+    tel_1 = models.CharField(max_length=50)
+    tel_2 = models.CharField(max_length=50)
+    senha = models.CharField(max_length=50)
+    senha_2 = models.CharField(max_length=50)
 
 
 ''' class Sobre(models.Model):
