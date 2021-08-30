@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-from candidato.models import Sobre, Experiencias, Cursos
+from .models import Profile
 
 def login(request):
     if request.method == 'POST':
@@ -26,11 +26,9 @@ def login(request):
     return render(request, 'index.html')
 
 
-def registro(request):
+def profile(request):
     if request.method == 'POST':
-        nome = request.POST['nome']
         data_nascimento = request.POST['datanascimento']
-        email = request.POST['email']
         estado_civil = request.POST['estadocivil']
         logradouro = request.POST['logradouro']
         bairro = request.POST['bairro']
@@ -38,30 +36,50 @@ def registro(request):
         cidade = request.POST['cidade']
         estado = request.POST.get('estado')
         cep = request.POST['cep']
-        tel = request.POST['telefone1']
+        tel_1 = request.POST['telefone1']
         tel_2 = request.POST['telefone2']
+        perfil = Profile.objects.create(
+            user=cadastro.pk,
+            datanascimento=data_nascimento,
+            estadocivil=estado_civil,
+            logradouro=logradouro,
+            bairro=bairro,
+            numerocasa=numero,
+            cidade=cidade,
+            estado=estado,
+            cep=cep,
+            telefone1=tel_1,
+            telefone2=tel_2,
+            )
+        perfil.save()
+        
+        
+def cadastro(request):
+    if request.method == 'POST':
+        nome = request.POST['nome']
+        email = request.POST['email']
         senha = request.POST['password']
         senha_2 = request.POST['password2']
         if not nome.strip():
             messages.error(request, 'O campo nome não pode ficar em branco')
-            return redirect('registro')
+            return redirect('cadastro')
         if not email.strip():
             messages.error(request, 'O campo email não pode ficar em branco')
-            return redirect('registro')
+            return redirect('cadastro')
         if senha != senha_2:
             messages.error(request, 'As senhas não são iguais!')
-            return redirect('registro')
+            return redirect('cadastro')
         if User.objects.filter(email=email).exists():
             messages.error(request, 'Usuário já cadastrado!')
-            return redirect('registro')
+            return redirect('cadastro')
         if User.objects.filter(username=nome).exists():
             messages.error(request, 'Usuário já cadastrado!')
-            return redirect('registro')
+            return redirect('cadastro')
         user = User.objects.create_user(username=nome, email=email, password=senha)
         user.save()
         messages.success(request, 'Cadastro realizado com sucesso!')
         return redirect('login')
-    return render(request, 'registro.html')
+    return render(request, 'cadastro.html')
             
 
 def experiencias(request):

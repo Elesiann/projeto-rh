@@ -66,7 +66,7 @@ WSGI_APPLICATION = 'projeto_rh.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rh-projeto',
+        'NAME': 'rh_projeto',
         'USER': 'postgres',
         'PASSWORD': '4887',
         'HOST': 'localhost'
