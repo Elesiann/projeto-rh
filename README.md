@@ -15,7 +15,10 @@ O Psycopg é um adaptador PostgreSQL que pode ser usado para aproveitar o Postgr
 Quando executamos o makemigrations, o Django cria o banco de dados e as migrations, mas não as executa
 - ### Agora para executar as migrações rode o comando: py manage.py migrate
 - ### Rode o servidor Django com: py manage.py runserver
-- ### Acesse: localhost:8000/login e você estará na página principal. 
+- ### localhost:8000/login e você estará na página principal. 
+- ### localhost:8000/cadastro e você estará na página de cadastro.
+- ### localhost:8000/sobre e você estará na página Sobre.
+- ### localhost:8000/experiencias e você estará na página de experiências.
 
 ---------------------------------------------------------------------
 
