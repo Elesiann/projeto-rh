@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, models
 from django.contrib import auth, messages
-from .models import Usuario
+from .models import Usuario, Sobre
 
 def login(request):
     if request.method == 'POST':
@@ -57,7 +57,10 @@ def cadastro(request):
         if Usuario.objects.filter(nome=nome).exists():
             messages.error(request, 'Usuário já cadastrado!')
             return redirect('cadastro')
-                            
+        
+        usuario = User.objects.create_user(username=nome, email=email, password=senha)
+        usuario.save()
+                       
         user = Usuario.objects.create(
             nome=nome, 
             data_nascimento=data_nascimento,
@@ -71,8 +74,6 @@ def cadastro(request):
             cep=cep,
             tel_1=tel_1,
             tel_2=tel_2,
-            senha=senha,
-            senha_2=senha_2,
         )
         user.save()
 
@@ -129,8 +130,8 @@ def sobre(request):
         if sobrecandidato == '':
             messages.error(request, 'Não deixe essa parte em branco.')
             return redirect('sobre')
-        #sobre = Sobre.objects.create(sobrecandidato=sobrecandidato)
-        #sobre.save()
+        sobre = Sobre.objects.create(sobrecandidato=sobrecandidato)
+        sobre.save()
         return redirect('experiencias')
     if request.user.is_authenticated:
         return render(request, 'sobre.html')
