@@ -7,7 +7,57 @@
     <title>Página Admin</title>
 </head>
 <body>
-    <form action="{% url '' %}"></form>
+    <form action="{% url 'administrador' %}"></form>
     <h1>Bem Vindo</h1>
+    <table border="5px" width="400px">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome Do Curso</th>
+                <th scope="col">Data</th>
+            </tr>
+        </thead>
+        {% for value in cursos %}
+        <tbody>
+            <tr>
+                <th scope="row">{{ value.id }}</th> 
+                <td>{{ value.nome_curso }}</td>
+                <td>{{ value.data }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+    <table border="5px" width="400px">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Experiencias</th>
+                <th scope="col">Local</th>
+            </tr>
+        </thead>
+        {% for value in experiencias %}
+        <tbody>
+            <tr>
+                <th scope="row">{{ value.id }}</th> 
+                <td>{{ value.cargo }}</td>
+                <td>{{ value.local }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+        </table>
+    <table border="5px" width="400px">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">{{ User.nome }}</th> 
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

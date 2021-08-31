@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
-from django.contrib.auth.models import User, models
+from django.contrib.auth.models import User
 from django.contrib import auth, messages
-from .models import Usuario, Sobre
+from .models import Usuario, Sobre, Cursos, Experiencias
 
 def login(request):
     if request.method == 'POST':
@@ -88,11 +88,20 @@ def experiencias(request):
         inicio = request.POST['inicio']
         fim = request.POST['fim']
         local = request.POST['local']
-        conquistas = request.POST['sobreexperiencia']
+        atividades = request.POST['sobreexperiencia']
         comprovante = request.POST['comprovante']
+
+        experiencias = Experiencias.objects.create(
+            cargo=cargo,
+            inicio=inicio,
+            fim=fim,
+            local=local,
+            atividades=atividades,
+            comprovante=comprovante,
+            )
+        experiencias.save()
+        
         return redirect('experiencias')
-        #experiencias = Sobre.objects.create(sobrecandidato=sobrecandidato)
-        #experiencias.save()
     if request.user.is_authenticated:
         return render(request, 'experiencias.html')
     else:
@@ -103,15 +112,20 @@ def cursos(request):
     if request.method == 'POST':
         nome_curso = request.POST['NomeCurso']
         data = request.POST['DataCurso']
-        local = request.POST['LocalCurso']
-        duracao = request.POST['DuracaoCurso']
-        certificado = request.POST['Certificado']
-        office = request.POST['office']
-        ingles = request.POST['ingles']
-        informatica = request.POST['informatica']
-        return redirect('cursos')  
-        #experiencias = Sobre.objects.create(sobrecandidato=sobrecandidato)
-        #experiencias.save()
+        local_curso = request.POST['LocalCurso']
+        duracao_horas = request.POST['DuracaoCurso']
+        certificado = request.POST['Certificado'] 
+
+        cursos = Cursos.objects.create(
+            nome_curso=nome_curso,
+            data=data,
+            local_curso=local_curso,
+            duracao_horas=duracao_horas,
+            certificado=certificado,
+            )
+        cursos.save()
+
+        return redirect('cursos') 
     if request.user.is_authenticated:
          return render(request, 'cursos.html')
     else:
@@ -150,4 +164,16 @@ def botao_finalizar(request):
 
 
 def administrador(request):
-    return render(request, 'administrador.html')
+    if request.user.is_authenticated:
+        cursos = Cursos.objects.all
+        experiencias = Experiencias.objects.all
+        candidato = User.objects.all
+        return render(request, 'administrador.html', 
+        {
+            'cursos': cursos,
+            'experiencias': experiencias,
+            'candidato': candidato,
+        })
+    else:
+        return redirect('login')
+

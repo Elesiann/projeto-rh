@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Usuario(models.Model):
-    relacao_user = models.ForeignKey(User, on_delete=models.CASCADE),
+    relacao_user = models.OneToOneField(User, on_delete=models.CASCADE),
     nome = models.CharField(max_length=50)
     email = models.EmailField()
     data_nascimento = models.DateField(auto_now=False, auto_now_add=False)
@@ -19,12 +19,12 @@ class Usuario(models.Model):
 
 
 class Sobre(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=1)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     sobrecandidato = models.TextField(verbose_name='sobreCandidato')
     
 
 class Experiencias(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     cargo = models.CharField(max_length=50)
     inicio = models.DateField(null=True)
     fim = models.DateField(null=True)
@@ -34,7 +34,7 @@ class Experiencias(models.Model):
 
 
 class Cursos(models.Model):
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     nome_curso = models.CharField(max_length=50)
     data = models.DateField(null=True)
     local_curso = models.CharField(max_length=50)
