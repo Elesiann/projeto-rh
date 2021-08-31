@@ -23,8 +23,8 @@ class Sobre(models.Model):
     sobrecandidato = models.TextField(verbose_name='sobreCandidato')
     
 
-'''class Experiencias(models.Model):
-    usuario = models.ForeignKey(Cadastro, on_delete=models.CASCADE)
+class Experiencias(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     cargo = models.CharField(max_length=50)
     inicio = models.DateField(null=True)
     fim = models.DateField(null=True)
@@ -34,10 +34,9 @@ class Sobre(models.Model):
 
 
 class Cursos(models.Model):
-    usuario = models.ForeignKey(Cadastro, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     nome_curso = models.CharField(max_length=50)
     data = models.DateField(null=True)
     local_curso = models.CharField(max_length=50)
     duracao_horas = models.IntegerField()
     certificado = models.FileField(null=True)
- '''
