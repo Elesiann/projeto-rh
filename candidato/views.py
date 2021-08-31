@@ -1,31 +1,36 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
-
+from .models import Usuario, Sobre, Cursos, Experiencias
 
 def login(request):
     if request.method == 'POST':
         email = request.POST['email']
         senha = request.POST['password']
         if email == '' or senha == '':
-            messages.error(request, 'Os campos email e senha nao podem ficar em branco')
+            messages.error(request, 'Os campos email e senha não podem ficar em branco')
             return redirect('login')
-        print(email, senha)
         if User.objects.filter(email=email).exists():
             nome = User.objects.filter(email=email).values_list('username', flat=True).get()
             user = auth.authenticate(request, username=nome, password=senha)
             if user is not None:
                 auth.login(request, user)
-                messages.success(request, 'Login realizado com sucesso')
                 return redirect('sobre')
+            else:
+                messages.error(request, 'As senhas não conferem! Digite novamente.')
+                return redirect('login')
+        else:
+            messages.error(request, 'Você não está registrado. Por favor, clique em Cadastre-se.')
+            return redirect('login')
+
     return render(request, 'index.html')
-
-
-def registro(request):
+        
+       
+def cadastro(request):
     if request.method == 'POST':
         nome = request.POST['nome']
-        data_nascimento = request.POST['datanascimento']
         email = request.POST['email']
+        data_nascimento = request.POST['datanascimento']
         estado_civil = request.POST['estadocivil']
         logradouro = request.POST['logradouro']
         bairro = request.POST['bairro']
@@ -33,33 +38,70 @@ def registro(request):
         cidade = request.POST['cidade']
         estado = request.POST.get('estado')
         cep = request.POST['cep']
-        tel = request.POST['telefone1']
+        tel_1 = request.POST['telefone1']
         tel_2 = request.POST['telefone2']
         senha = request.POST['password']
         senha_2 = request.POST['password2']
         if not nome.strip():
             messages.error(request, 'O campo nome não pode ficar em branco')
-            return redirect('registro')
+            return redirect('cadastro')
         if not email.strip():
             messages.error(request, 'O campo email não pode ficar em branco')
-            return redirect('registro')
+            return redirect('cadastro')
         if senha != senha_2:
             messages.error(request, 'As senhas não são iguais!')
-            return redirect('registro')
-        if User.objects.filter(email=email).exists():
+            return redirect('cadastro')
+        if Usuario.objects.filter(email=email).exists():
             messages.error(request, 'Usuário já cadastrado!')
-            return redirect('registro')
-        if User.objects.filter(username=nome).exists():
+            return redirect('cadastro')
+        if Usuario.objects.filter(nome=nome).exists():
             messages.error(request, 'Usuário já cadastrado!')
-            return redirect('registro')
-        user = User.objects.create_user(username=nome, email=email, password=senha)
+            return redirect('cadastro')
+        
+        usuario = User.objects.create_user(username=nome, email=email, password=senha)
+        usuario.save()
+                       
+        user = Usuario.objects.create(
+            nome=nome, 
+            data_nascimento=data_nascimento,
+            email=email,          
+            estado_civil=estado_civil,
+            logradouro=logradouro,
+            bairro=bairro,
+            numero=numero,
+            cidade=cidade,
+            estado=estado,
+            cep=cep,
+            tel_1=tel_1,
+            tel_2=tel_2,
+        )
         user.save()
+
         messages.success(request, 'Cadastro realizado com sucesso!')
         return redirect('login')
-    return render(request, 'registro.html')
+    return render(request, 'cadastro.html')
             
 
 def experiencias(request):
+    if request.method == 'POST':
+        cargo = request.POST['cargo']
+        inicio = request.POST['inicio']
+        fim = request.POST['fim']
+        local = request.POST['local']
+        atividades = request.POST['sobreexperiencia']
+        comprovante = request.POST['comprovante']
+
+        experiencias = Experiencias.objects.create(
+            cargo=cargo,
+            inicio=inicio,
+            fim=fim,
+            local=local,
+            atividades=atividades,
+            comprovante=comprovante,
+            )
+        experiencias.save()
+        
+        return redirect('experiencias')
     if request.user.is_authenticated:
         return render(request, 'experiencias.html')
     else:
@@ -67,18 +109,71 @@ def experiencias(request):
 
 
 def cursos(request):
+    if request.method == 'POST':
+        nome_curso = request.POST['NomeCurso']
+        data = request.POST['DataCurso']
+        local_curso = request.POST['LocalCurso']
+        duracao_horas = request.POST['DuracaoCurso']
+        certificado = request.POST['Certificado'] 
+
+        cursos = Cursos.objects.create(
+            nome_curso=nome_curso,
+            data=data,
+            local_curso=local_curso,
+            duracao_horas=duracao_horas,
+            certificado=certificado,
+            )
+        cursos.save()
+
+        return redirect('cursos') 
     if request.user.is_authenticated:
          return render(request, 'cursos.html')
     else:
         return redirect('login')
 
 
+def logout(request):
+    auth.logout(request)
+    messages.success(request, 'Logout realizado com sucesso')
+    return redirect('login')
+
+
 def sobre(request):
+    if request.method == 'POST':
+        sobrecandidato = request.POST['sobrecandidato']
+        if sobrecandidato == '':
+            messages.error(request, 'Não deixe essa parte em branco.')
+            return redirect('sobre')
+        sobre = Sobre.objects.create(sobrecandidato=sobrecandidato)
+        sobre.save()
+        return redirect('experiencias')
     if request.user.is_authenticated:
-           return render(request, 'sobre.html')
+        return render(request, 'sobre.html')
     else:
         return redirect('login')
 
 
+def botao_proximo(request):
+    if request.method == 'POST':
+        return redirect('cursos')
 
-    return not campo.strip
+
+def botao_finalizar(request):
+    if request.method == 'POST':
+        return redirect('cursos')
+
+
+def administrador(request):
+    if request.user.is_authenticated:
+        cursos = Cursos.objects.all
+        experiencias = Experiencias.objects.all
+        candidato = User.objects.all
+        return render(request, 'administrador.html', 
+        {
+            'cursos': cursos,
+            'experiencias': experiencias,
+            'candidato': candidato,
+        })
+    else:
+        return redirect('login')
+

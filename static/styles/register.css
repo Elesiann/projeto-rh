@@ -30,9 +30,9 @@ form * {
 }
 
 .form-width {
-  width: 50vw;
+  width: 20vw;
   padding: 2rem;
-  background: white;
+  background: red;
   border-radius: 15px;
 }
 
@@ -61,7 +61,7 @@ form * {
   color: rgba(106, 168, 184, 1) !important;
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
   .form-width {
     width: 70vw;
   }
@@ -71,4 +71,4 @@ form * {
   .form-width {
     width: 80vw;
   }
-}
+} */

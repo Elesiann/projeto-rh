@@ -1,10 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
-class Registro(models.Model):
-    nome = models.CharField(max_length=100)
+class Usuario(models.Model):
+    relacao_user = models.OneToOneField(User, on_delete=models.CASCADE),
+    nome = models.CharField(max_length=50)
+    email = models.EmailField()
     data_nascimento = models.DateField(auto_now=False, auto_now_add=False)
-    email = models.EmailField(max_length=100)
     estado_civil = models.CharField(max_length=50)
     logradouro = models.CharField(max_length=200)
     bairro = models.CharField(max_length=50)
@@ -12,9 +14,29 @@ class Registro(models.Model):
     cidade = models.CharField(max_length=50)
     estado = models.CharField(max_length=50)
     cep = models.IntegerField(null=True)
-    tel_1 = models.IntegerField(null=True)
-    tel_2 = models.IntegerField(blank=True)
+    tel_1 = models.CharField(max_length=50)
+    tel_2 = models.CharField(max_length=50)
 
-  
+
+class Sobre(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    sobrecandidato = models.TextField(verbose_name='sobreCandidato')
     
-    
+
+class Experiencias(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    cargo = models.CharField(max_length=50)
+    inicio = models.DateField(null=True)
+    fim = models.DateField(null=True)
+    local = models.CharField(max_length=50)
+    atividades = models.TextField(null=True, verbose_name='atividadesOuConquistas')
+    comprovante = models.FileField(null=True)
+
+
+class Cursos(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    nome_curso = models.CharField(max_length=50)
+    data = models.DateField(null=True)
+    local_curso = models.CharField(max_length=50)
+    duracao_horas = models.IntegerField()
+    certificado = models.FileField(null=True)

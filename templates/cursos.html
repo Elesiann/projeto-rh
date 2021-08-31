@@ -11,6 +11,9 @@
                         <img src="{% static 'img/logo.png' %}" style="width: 75px" /></a>
                     <!--=======================-->
                     <button class="btn btn-info ms-5 text-white">Dúvidas?</button>
+                    <a href="{% url 'logout' %}">
+                        <button class="btn btn-info text-white">Logout</button>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -43,60 +46,55 @@
                 <a href="{% url 'experiencias' %}"><i class='bx bxs-left-arrow button__left'></i></a>
             </div>
         </div>
-
+    <form action="{% url 'cursos' %}" method="POST">
         <div class="curriculum__center">
             <div class="curriculum__background">
                 <div class="curriculum__content p-3">
                     <div class="experience__container">
-                        <form action="" class="row g-3 experience__content ">
+                        <form action=""class="row g-3 experience__content ">
+                            {% csrf_token %}
                             <form action="" class="courses__form">
                                 <div class="courses__container mt-2">
                                     <div class="courses__content">
                                         <div class="row">
                                             <h2 class="sobre-candidato text-center mt-5 fw-bold"> Seus cursos </h2>
-                                            <div class="col-lg-8 my-3">
-                                                <label for="courseName">Nome do Curso</label>
-                                                <input type="text" class="form-control" name="courseName"
-                                                    id="courseName" aria-label="First name">
+                                            <div class="col-lg-4 my-3">
+                                                <label for="NomeCurso">Nome do Curso</label>
+                                                <input type="text" class="form-control" name="NomeCurso"
+                                                    id="NomeCurso" name="NomeCurso" aria-label="First name">
+                                            </div>
+                                            <div class="col-lg-3 my-3">
+                                                <label for="DataCurso">Data</label>
+                                                <input type="date" class="form-control" name="DataCurso"
+                                                    id="DataCurso" aria-label="First name">
+                                            </div>
+                                            <div class="col-lg-3 my-3">
+                                                <label for="LocalCurso">Local</label>
+                                                <input type="text" class="form-control" name="LocalCurso"
+                                                    id="LocalCurso" aria-label="First name">
                                             </div>
 
-                                            <div class="col-lg-4 my-3">
-                                                <label for="courseName">Data</label>
-                                                <input type="date" class="form-control" name="courseName"
-                                                    id="courseName" aria-label="First name">
+                                            <div class="col-lg-2 my-3">
+                                                <label for="DuracaoCurso">Duração (Horas)</label>
+                                                <input type="number" class="form-control" name="DuracaoCurso"
+                                                    id="DuracaoCurso" name="DuracaoCurso">
                                             </div>
-                                            <div class="col-lg-8 my-3">
-                                                <label for="courseLocal">Local</label>
-                                                <input type="text" class="form-control" name="courseLocal"
-                                                    id="courseLocal" aria-label="First name">
-                                            </div>
-
-                                            <div class="col-lg-4 my-3">
-                                                <label for="courseDuration">Duração (Horas)</label>
-                                                <input type="number" class="form-control" name="courseDuration"
-                                                    id="courseDuration">
-                                            </div>
-                                            <div class="">
-                                                <label for="formFile" class="form-label">Certificado </label>
-                                                <input class="form-control" type="file" id="formFile">
-                                            </div>
-                                            <div class="send-button mt-5 ">
-                                                <button class="btn btn-primary w-100" type="submit">
-                                                    Enviar
-                                                </button>
-                                                <span class="send-span">Você poderá adicionar mais cursos ao
-                                                    enviar</span>
+                                            <div class="col-lg-5 my-3">
+                                                <label for="Certificado" class="form-label">Certificado </label>
+                                                <input class="form-control" type="file" id="Certificado" name="Certificado">
+                                                <div class="send-button mt-9 col-lg-12 my-5 ">
+                                                    <button class="btn btn-primary w-100" type="submit">
+                                                        Enviar
+                                                    </button>
+                                                    <span class="send-span">Você poderá adicionar mais cursos ao enviar</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </form>
-
                     </div>
-
-
-
                     <!-- ========================================================== 
                         COMPETENCIAS
                     =============================================================== -->
@@ -104,36 +102,45 @@
                         <h3 class="fw-bold d-flex justify-content-center">Competências</h3>
                         <div class="container justify-content-center"></div>
                         <div class="row d-flex justify-content-center">
-                            <div class="col-md-12 my-3">
-                                <label for="" class="text-center d-flex justify-content-center">Excel </label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="1">basico</option>
-                                    <option value="2">intermediario</option>
-                                    <option value="3">CHUCK NORRIS</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="container justify-content-center"></div>
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-md-12 my-3">
-                                <label for="" class="text-center d-flex justify-content-center">Powerpoint </label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="1">basico</option>
-                                    <option value="2">intermediario</option>
-                                    <option value="3">CHUCK NORRIS</option>
+                            <div class="col-md-3 my-3">
+                                <label for="" class="text-center d-flex justify-content-center">Microsoft Office</label>
+                                <select class="form-select" name="office" aria-label="Default select example">
+                                    <option value="1" >Básico</option>
+                                    <option value="2">Intermediario</option>
+                                    <option value="3">Avançado</option>
                                 </select>
                             </div>
                         </div>
                         <div class="container justify-content-center"></div>
                         <div class="row d-flex justify-content-center">
-                            <div class="col-md-12 my-3">
-                                <label for="" class="text-center d-flex justify-content-center">Calculadora </label>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="1">basico</option>
-                                    <option value="2">intermediario</option>
-                                    <option value="3">CHUCK NORRIS</option>
+                            <div class="col-md-3 my-3">
+                                <label for="" class="text-center d-flex justify-content-center">Inglês</label>
+                                <select class="form-select" name="ingles" aria-label="Default select example">
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediario</option>
+                                    <option value="3">Avançado</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="container justify-content-center"></div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-3 my-3">
+                                <label for="" class="text-center d-flex justify-content-center" >Informática</label>
+                                <select class="form-select" name="informatica" aria-label="Default select example">
+                                    <option value="1">Básico</option>
+                                    <option value="2">Intermediario</option>
+                                    <option value="3">Avançado</option>
+                                </select>
+                            </div>
+    </form>
+                            <form action="{% url 'botao_finalizar' %}" method="POST">
+                                {% csrf_token %}
+                            <div class="send-button mt-3  col-md-5 ">
+                                <button class="btn btn-success w-100" type="submit">
+                                    Finalizar                                  
+                                </button>
+                                <span>Clicando em Finalizar, seu currículo será enviado para análise em nosso banco de dados. Boa sorte!</span>
+                            </form>
                             </div>
                         </div>
                     </div>

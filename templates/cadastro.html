@@ -33,19 +33,19 @@
 <body>
   <div class="form-center">
     <div class="form-width">
-      <form action="{% url 'registro' %}" method="POST" class="row g-3">
+      <form action="{% url 'cadastro' %}" method="POST" class="row g-3">
         {% csrf_token %}
         <h2 class="text-center mb-3 fw-bold">Faça seu cadastro</h2>
         <h5 class="text-center mt-1">Para entrarmos em contato</h5>
-        <div class="col-md-9">
+        <div class="col-md-7">
           <label for="nome" class="form-label">Nome</label>
           <input type="text" class="form-control" id="nome" name="nome"/>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <label for="datanascimento" class="form-label">Data de Nasc.</label>
           <input type="date" class="form-control" id="datanascimento" name="datanascimento" />
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
           <label for="email" class="form-label">Email</label>
           <input type="email" class="form-control" id="email" name="email" />
         </div>
@@ -66,13 +66,13 @@
         </div>
         <div class="col-md-4">
           <label for="bairro" class="form-label">Bairro</label>
-          <input type="text" class="form-control" id="bairro" placeholder="Rua João Vitor" name="bairro" />
+          <input type="text" class="form-control" id="bairro" placeholder="Centro" name="bairro" />
         </div>
         <div class="col-md-2">
           <label for="numerocasa" class="form-label">Número</label>
           <input type="number" class="form-control" id="numerocasa" name="numerocasa" />
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
           <label for="cidade" class="form-label">Cidade</label>
           <input type="text" class="form-control" id="cidade" name="cidade" />
         </div>
@@ -109,7 +109,7 @@
             <option name="TO">Tocantins</option>
           </select>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <label for="cep" class="form-label">CEP</label>
           <input type="number" class="form-control" id="cep" name="cep"/>
         </div>

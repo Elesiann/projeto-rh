@@ -12,6 +12,9 @@
                         <img src="{% static 'img/logo.png' %}" style="width: 75px" /></a>
                     <!--=======================-->
                     <button class="btn btn-info ms-5 text-white">Dúvidas?</button>
+                    <a href="{% url 'logout' %}">
+                        <button class="btn btn-info text-white">Logout</button>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -47,14 +50,18 @@
         <div class="curriculum__center">
             <div class="curriculum__background my-5">
                 <div class="curriculum__content p-4">
-                    <h3 class="sobre-candidato fw-bold text-center">Fale sobre você!</h3>
+                    {% include 'partials/_alertas.html' %}
+                    <form action="{% url 'sobre' %}" method="POST" class="row g-3"> 
+                        {% csrf_token %}
+                    <h3 class="sobrecandidato fw-bold text-center">Fale sobre você!</h3>
                     <div class="form-group">
-                        <textarea class="form-control textarea-about" id="sobrecandidato"
+                        <textarea type="text" class="form-control textarea-about" id="sobrecandidato" name="sobrecandidato"
                             placeholder="Fale sobre o que você têm a nos oferecer, sua vida e sua história... "
                             rows="3"></textarea>
                         <button class="btn btn-primary w-100" type="submit">
                             Enviar
                         </button>
+                    </form>
                     </div>
                 </div>
             </div>
